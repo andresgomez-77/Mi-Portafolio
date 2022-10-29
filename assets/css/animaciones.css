@@ -1,0 +1,62 @@
+@keyframes moverIzquierda{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moverDerecha{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moverArriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cambio {
+    0%{
+        margin-left: 0;
+    }
+    30%{
+        margin-left: 0;
+    }
+    35%{
+        margin-left: -100%;
+    }
+    65%{
+        margin-left: -100%;
+    }
+    70%{
+        margin-left: -200%;
+    }
+    100%{
+        margin-left: -200%;
+    }
+}
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
