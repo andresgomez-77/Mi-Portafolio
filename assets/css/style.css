@@ -189,14 +189,14 @@ section.about{
     flex-direction: column;
     justify-content: center;
     background-color: var(--cor-de-barra);
-    height: 24rem;
+    height: 100%;
     color: black;
     font-weight: bold;
     font-size: 1.8rem;
     padding-left: .5rem;
 }
 .about__curva{
-    height: 24rem; 
+    height: 100%; 
     overflow: hidden; 
     width: 3rem;
 }
@@ -712,6 +712,7 @@ section.about{
 .about__container{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .about__container2{
     display: flex;
