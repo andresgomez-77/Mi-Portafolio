@@ -184,7 +184,6 @@ section.about {
   display: flex;
   flex-direction: row;
 }
-<<<<<<< HEAD
 .about__title {
   display: flex;
   flex-direction: column;
@@ -200,23 +199,6 @@ section.about {
   height: 100%;
   overflow: hidden;
   width: 3rem;
-=======
-.about__title{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--cor-de-barra);
-    height: 100%;
-    color: black;
-    font-weight: bold;
-    font-size: 1.8rem;
-    padding-left: .5rem;
-}
-.about__curva{
-    height: 100%; 
-    overflow: hidden; 
-    width: 3rem;
->>>>>>> 576d59648bb355c3205285e5a70432885c225afd
 }
 .about__parrafo {
   display: flex;
@@ -731,14 +713,8 @@ Utiliza las referencias de los breakpoints @media abajo */
     display: flex;
     width: 100%;
     flex-direction: column;
-<<<<<<< HEAD
   }
   .about__container2 {
-=======
-    width: 100%;
-}
-.about__container2{
->>>>>>> 576d59648bb355c3205285e5a70432885c225afd
     display: flex;
 
     flex-direction: row;
@@ -868,7 +844,7 @@ Utiliza las referencias de los breakpoints @media abajo */
   .experience__dropdown {
     width: 19.5%;
   }
-  .experience__box__caja__bloque{
+  .experience__box__caja__bloque {
     padding: 1rem 0;
     display: flex;
   }
