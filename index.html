@@ -1,448 +1,947 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/icons/cv.png" />
     <!-- Referencia de la hoja de estilo de Css -->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/fondo_animado.css">
-    <link rel="stylesheet" href="assets/css/animaciones.css">
-    <link rel="stylesheet" href="assets/css/validacionjs.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/fondo_animado.css" />
+    <link rel="stylesheet" href="assets/css/animaciones.css" />
+    <link rel="stylesheet" href="assets/css/validacionjs.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <!-- Fonte del Proyecto Raleway -->
-    
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <title> Mi Portafolio</title>
-</head>
-<body>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mi Portafolio</title>
+  </head>
+  <body>
     <!-- Sección del Menú  -->
-    <div class="tudo">
-    <section class="menu">
-        <nav class="menu__header">
-            <h3 class="menu__title menu__title__shadow" id="mi__portafolio">Mi <span class="title__second">Portafolio</span></h3>
-            <div class="menu__despegable">
-                <button class="menu__boton"><span class="material-symbols-outlined">menu</span>
-                </button>
-                <ul class="menu__list">
-                    <li class="menu__list__item"><a href="#sobre-mi">Sobre mi</a></li>
-                    <li class="menu__list__item"><a href="#skills">Habilidades</a></li>
-                    <li class="menu__list__item"><a href="#formacion">Formación</a></li>
-                    <li class="menu__list__item"><a href="#xp">Proyectos</a></li>
-                    <li class="menu__list__item"><a href="#hobbies">Pasatiempo</a></li>
-                    <li class="menu__list__item"><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div style="height: 25px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #F5F5F5;"></path></svg></div>
-    </section>
+    <header class="menu">
+      <nav class="menu__header">
+        <h3 class="menu__title menu__title__shadow" id="mi__portafolio">
+          Mi <span class="title__second">Portafolio</span>
+        </h3>
+        <div class="menu__despegable">
+          <button class="menu__boton">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <ul class="menu__list">
+            <li class="menu__list__item"><a href="#sobre-mi">Sobre mi</a></li>
+            <li class="menu__list__item"><a href="#skills">Habilidades</a></li>
+            <li class="menu__list__item"><a href="#formacion">Formación</a></li>
+            <li class="menu__list__item"><a href="#xp">Proyectos</a></li>
+            <li class="menu__list__item"><a href="#hobbies">Pasatiempo</a></li>
+            <li class="menu__list__item"><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div style="height: 25px; overflow: hidden">
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style="height: 100%; width: 100%"
+        >
+          <path
+            d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+            style="stroke: none; fill: #f5f5f5"
+          ></path>
+        </svg>
+      </div>
+    </header>
 
     <!-- Sección del Header/Title/Hero -->
     <section class="title">
-        <div class="title__div">
-            <div class="menu__caja">
-                <img src="assets/img/cara.jpg" alt="cara" class="menu__cara">
-                <div class="title__biogra">
-                    <h1 class="title__bio">Andrés Felipe <br><span class="title__bio__sec">Gómez Pinzón</span></h1>
-                    <h2 class="title__bio">Ingeniero <br><span class="title__bio__sec">Electrónico</span><br><span class="title__bio__ter">front-end en formación</span></h2>
-                </div>
-            </div>
-            <div class="title__container">
-                <ul class="title__network">
-                     <!-- Pon los enlaces de tus redes sociales favoritas -->
-                    <li class="title__network__item"><a href="https://github.com/andresgomez-77" target="_blank"><img src="assets/icons/github.png" class="title__network__icon" > </a></li>
-                    <li class="title__network__item"><a href="https://www.linkedin.com/in/andrés-gómez/"target="_blank"><img src="assets/icons/linked.png" class="title__network__icon" ></a></li>
-                    <li class="title__network__item"><a href="assets/doc/Hoja de vida_Andres Gomez.pdf" target="_blank"> <img src="assets/icons/cv.png" class="title__network__icon"></a></li>
-                </ul>
-            </div>
+      <div class="title__div">
+        <div class="menu__caja">
+          <img src="assets/img/cara.jpg" alt="cara" class="menu__cara" />
+          <div class="title__biogra">
+            <h1 class="title__bio">
+              Andrés Felipe <br /><span class="title__bio__sec"
+                >Gómez Pinzón</span
+              >
+            </h1>
+            <h2 class="title__bio">
+              Ingeniero <br /><span class="title__bio__sec">Electrónico</span
+              ><br /><span class="title__bio__ter">front-end en formación</span>
+            </h2>
+          </div>
         </div>
+        <div class="title__container">
+          <ul class="title__network">
+            <!-- Pon los enlaces de tus redes sociales favoritas -->
+            <li class="title__network__item">
+              <a href="https://github.com/andresgomez-77" target="_blank"
+                ><img
+                  src="assets/icons/github.png"
+                  class="title__network__icon"
+                />
+              </a>
+            </li>
+            <li class="title__network__item">
+              <a
+                href="https://www.linkedin.com/in/andrés-gómez/"
+                target="_blank"
+                ><img
+                  src="assets/icons/linked.png"
+                  class="title__network__icon"
+              /></a>
+            </li>
+            <li class="title__network__item">
+              <a
+                href="assets/doc/Hoja de vida_Andres Gomez.pdf"
+                target="_blank"
+              >
+                <img src="assets/icons/cv.png" class="title__network__icon"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
     <!-- Sección sobre mi -->
-    <hr>
+    <hr />
     <section class="about" id="sobre-mi">
-        <div class="about__container">
-            <div class="about__container2">
-                <h3 class="about__title">Sobre <span style="color: #f5f5f5; padding: 0 10px;">mi</span> </h3>
-                <div class="about__curva"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M208.08,0.00 C152.69,67.09 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z" style="stroke: none; fill: #5BCAF3;"></path></svg></div>
-            </div>
-            <article class="about__parrafo">
-                <p class="about__paragraph">Profesional en Ingeniería Electrónica con conocimientos en diseño y programación Front-End, Arduino, Matlab y programación de PLC's .</p>
-                <p class="about__paragraph">Entusiasmado y con una gran visión por el desarrollo Front-End.</p>
-                <p class="about__paragraph">Teniendo la capacidad de poder crecer como profesional y desarrollador, adquiriendo nuevas experiencias, habilidades y conocimientos.</p>
-            </article>
+      <div class="about__container">
+        <div class="about__container2">
+          <h3 class="about__title">
+            Sobre <span style="color: #f5f5f5; padding: 0 10px">mi</span>
+          </h3>
+          <div class="about__curva">
+            <svg
+              viewBox="0 0 500 150"
+              preserveAspectRatio="none"
+              style="height: 100%; width: 100%"
+            >
+              <path
+                d="M208.08,0.00 C152.69,67.09 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z"
+                style="stroke: none; fill: #5bcaf3"
+              ></path>
+            </svg>
+          </div>
         </div>
+        <article class="about__parrafo">
+          <p class="about__paragraph">
+            Profesional en Ingeniería Electrónica con conocimientos en diseño y
+            programación Front-End, Arduino, Matlab y programación de PLC's .
+          </p>
+          <p class="about__paragraph">
+            Entusiasmado y con una gran visión por el desarrollo Front-End.
+          </p>
+          <p class="about__paragraph">
+            Teniendo la capacidad de poder crecer como profesional y
+            desarrollador, adquiriendo nuevas experiencias, habilidades y
+            conocimientos.
+          </p>
+        </article>
+      </div>
     </section>
-    <hr>
+    <hr />
     <!-- Sección de Skills -->
     <section class="skills" id="skills">
-        <div class="skills__container">
-            <div class="skills__container2">
-                <h3 class="skills__title">Habilidades</h3>
-                <div class="skills__curva"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M213.19,0.00 C152.69,70.06 270.03,70.06 202.98,150.00 L500.00,150.00 L500.00,0.00 Z" style="stroke: none; fill: #5BCAF3;"></path></svg></div>
-            </div>
-            <div class="skills__line" >
-                <div class="skills__line__box">
-                    <h3 class="skills__subtitle">Microsoft:</h3>
-                    <div class="skills__father__box">
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/word.png" alt=""> </li>
-                                <li class="skills__name">Word</li>
-                            </ul>
-                        </div>
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/excel.png" alt=""> </li>
-                                <li class="skills__name">Excel</li>
-                            </ul>
-                        </div>
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/powerpoint.png" alt=""> </li>
-                                <li class="skills__name">Power-Point</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills__line__box">
-                    <h3 class="skills__subtitle">Lenguajes de programación:</h3>
-                    <div class="skills__father__box">
-                        
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"><img src="assets/icons/htlm.png"></li>
-                                <li class="skills__name"> HTML 5</li>
-                            </ul>
-                        </div>
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/js_icon.png" alt=""></li>
-                                <li class="skills__name">Javascript</li>
-                            </ul>
-                        </div>
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/css_icon.png" alt=""> </li>
-                                <li class="skills__name">CSS</li>
-                            </ul>
-                        </div>
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/cmasmas.jpg" alt="" style="width:24px; height:28px;"> </li>
-                                <li class="skills__name">C++</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills__line__box">
-                    <h3 class="skills__subtitle">Editor de videos e imagénes:</h3>
-                    <div class="skills__father__box">
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/vegas.png" alt=""></li>
-                                <li class="skills__name">Sony Vegas</li>
-                            </ul>
-                        </div>
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"><img src="assets/icons/photoshop.png" alt=""></li>
-                                <li class="skills__name">Photoshop</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>    
-                <div class="skills__line__box">
-                    <h3 class="skills__subtitle">Otros programas:</h3>
-                    <div class="skills__father__box">
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/arduino.png" alt=""> </li>
-                                <li class="skills__name">Arduino</li>
-                            </ul>
-                        </div>
-                        <div class="skills__box">
-                            <ul>
-                                <li class="skills__img"> <img src="assets/icons/matlab.png" alt=""> </li>
-                                <li class="skills__name">Matlab</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div> 
-        </div>      
-    </section>
-    <hr>
-        <!-- Sección de Formación académica -->
-    <section class="academic" id="formacion">
-        <h2 class="academic__title" >Formación <span style="color: #f5f5f5;">Académica</span></h2>
-        <div class="academic__courses">
-            <div class="academic__courses__box">
-                <ul class="academic__courses__list">
-                    <!-- Pon el logotipo de la institución de formación -->
-                    <li class="academic__courses__item__title"><h4>Técnico en Sistemas</h4></li>
-                    <li class="academic__courses__item__img"><img src="assets/img/sena_logo.png" class="academic__courses__item__logo"></li>
-                    <li class="academic__courses__item__subtitle"><p>Nov 2012 - SENA</p></li>
-                </ul>
-            </div>
-            <hr class="linea">
-            <div class="academic__courses__box">
-                <ul class="academic__courses__list">
-                    <!--Pon el logotipo de la institución de formación -->
-                    <li class="academic__courses__item__title"><h4>Tecnólogo en Electrónica</h4></li>
-                    <li class="academic__courses__item__img"><img src="assets/img/uts_logo.png" class="academic__courses__item__logo"></li>
-                    <li class="academic__courses__item__subtitle"><p>Mar 2019 - UTS</p></li>
-                </ul>
-            </div>
-            <hr class="linea">
-            <div class="academic__courses__box">
-                <ul class="academic__courses__list">
-                    <!-- Pon el logotipo de la institución de formación -->
-                    <li class="academic__courses__item__title"><h4>Ingeniero en Electrónica</h4></li>
-                    <li class="academic__courses__item__img"><img src="assets/img/uts_logo.png" class="academic__courses__item__logo"></li>
-                    <li class="academic__courses__item__subtitle"><p>Jun 2020 - UTS</p></li>
-                </ul>
-            </div>
-            <hr class="linea">
-            <div class="academic__courses__box">
-                <ul class="academic__courses__list">
-                    <!-- Pon el logotipo de la institución de formación -->
-                    <li class="academic__courses__item__title"><h4>Introducción al Desarrollo Web front-end: HTML y CSS desde cero</h4></li>
-                    <li class="academic__courses__item__img"><img src="assets/img/crehana_logo.png" class="academic__courses__item__logo" style="width: 200px;"></li>
-                    <li class="academic__courses__item__subtitle"><p>Jun 2022 - Crehana</p></li>
-                </ul>
-            </div>
-            <hr class="linea">
-            <div class="academic__courses__box">
-                <ul class="academic__courses__list">
-                    <!-- Pon el logotipo de la institución de formación -->
-                    <li class="academic__courses__item__title"><h4>Proyecto Oracle-Alura</h4></li>
-                    <li class="academic__courses__item__img"><img src="assets/img/alura_logo.png" class="academic__courses__item__logo"></li>
-                    <li class="academic__courses__item__subtitle"><p>En curso - Alura</p></li>
-                </ul>
-            </div>
+      <div class="skills__container">
+        <div class="skills__container2">
+          <h3 class="skills__title">Habilidades</h3>
+          <div class="skills__curva">
+            <svg
+              viewBox="0 0 500 150"
+              preserveAspectRatio="none"
+              style="height: 100%; width: 100%"
+            >
+              <path
+                d="M213.19,0.00 C152.69,70.06 270.03,70.06 202.98,150.00 L500.00,150.00 L500.00,0.00 Z"
+                style="stroke: none; fill: #5bcaf3"
+              ></path>
+            </svg>
+          </div>
         </div>
+        <div class="skills__line">
+          <div class="skills__line__box">
+            <h3 class="skills__subtitle">Microsoft:</h3>
+            <div class="skills__father__box">
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/word.png" alt="" />
+                  </li>
+                  <li class="skills__name">Word</li>
+                </ul>
+              </div>
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/excel.png" alt="" />
+                  </li>
+                  <li class="skills__name">Excel</li>
+                </ul>
+              </div>
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/powerpoint.png" alt="" />
+                  </li>
+                  <li class="skills__name">Power-Point</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="skills__line__box">
+            <h3 class="skills__subtitle">Lenguajes de programación:</h3>
+            <div class="skills__father__box">
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/htlm.png" />
+                  </li>
+                  <li class="skills__name">HTML 5</li>
+                </ul>
+              </div>
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/js_icon.png" alt="" />
+                  </li>
+                  <li class="skills__name">Javascript</li>
+                </ul>
+              </div>
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/css_icon.png" alt="" />
+                  </li>
+                  <li class="skills__name">CSS</li>
+                </ul>
+              </div>
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img
+                      src="assets/icons/cmasmas.jpg"
+                      alt=""
+                      style="width: 24px; height: 28px"
+                    />
+                  </li>
+                  <li class="skills__name">C++</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="skills__line__box">
+            <h3 class="skills__subtitle">Editor de videos e imagénes:</h3>
+            <div class="skills__father__box">
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/vegas.png" alt="" />
+                  </li>
+                  <li class="skills__name">Sony Vegas</li>
+                </ul>
+              </div>
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/photoshop.png" alt="" />
+                  </li>
+                  <li class="skills__name">Photoshop</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="skills__line__box">
+            <h3 class="skills__subtitle">Otros programas:</h3>
+            <div class="skills__father__box">
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/arduino.png" alt="" />
+                  </li>
+                  <li class="skills__name">Arduino</li>
+                </ul>
+              </div>
+              <div class="skills__box">
+                <ul>
+                  <li class="skills__img">
+                    <img src="assets/icons/matlab.png" alt="" />
+                  </li>
+                  <li class="skills__name">Matlab</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <hr>
+    <hr />
+    <!-- Sección de Formación académica -->
+    <section class="academic" id="formacion">
+      <h2 class="academic__title">
+        Formación <span style="color: #f5f5f5">Académica</span>
+      </h2>
+      <div class="academic__courses">
+        <div class="academic__courses__box">
+          <ul class="academic__courses__list">
+            <!-- Pon el logotipo de la institución de formación -->
+            <li class="academic__courses__item__title">
+              <h4>Técnico en Sistemas</h4>
+            </li>
+            <li class="academic__courses__item__img">
+              <img
+                src="assets/img/sena_logo.png"
+                class="academic__courses__item__logo"
+              />
+            </li>
+            <li class="academic__courses__item__subtitle">
+              <p>Nov 2012 - SENA</p>
+            </li>
+          </ul>
+        </div>
+        <hr class="linea" />
+        <div class="academic__courses__box">
+          <ul class="academic__courses__list">
+            <!--Pon el logotipo de la institución de formación -->
+            <li class="academic__courses__item__title">
+              <h4>Tecnólogo en Electrónica</h4>
+            </li>
+            <li class="academic__courses__item__img">
+              <img
+                src="assets/img/uts_logo.png"
+                class="academic__courses__item__logo"
+              />
+            </li>
+            <li class="academic__courses__item__subtitle">
+              <p>Mar 2019 - UTS</p>
+            </li>
+          </ul>
+        </div>
+        <hr class="linea" />
+        <div class="academic__courses__box">
+          <ul class="academic__courses__list">
+            <!-- Pon el logotipo de la institución de formación -->
+            <li class="academic__courses__item__title">
+              <h4>Ingeniero en Electrónica</h4>
+            </li>
+            <li class="academic__courses__item__img">
+              <img
+                src="assets/img/uts_logo.png"
+                class="academic__courses__item__logo"
+              />
+            </li>
+            <li class="academic__courses__item__subtitle">
+              <p>Jun 2020 - UTS</p>
+            </li>
+          </ul>
+        </div>
+        <hr class="linea" />
+        <div class="academic__courses__box">
+          <ul class="academic__courses__list">
+            <!-- Pon el logotipo de la institución de formación -->
+            <li class="academic__courses__item__title">
+              <h4>
+                Introducción al Desarrollo Web front-end: HTML y CSS desde cero
+              </h4>
+            </li>
+            <li class="academic__courses__item__img">
+              <img
+                src="assets/img/crehana_logo.png"
+                class="academic__courses__item__logo"
+                style="width: 200px"
+              />
+            </li>
+            <li class="academic__courses__item__subtitle">
+              <p>Jun 2022 - Crehana</p>
+            </li>
+          </ul>
+        </div>
+        <hr class="linea" />
+        <div class="academic__courses__box">
+          <ul class="academic__courses__list">
+            <!-- Pon el logotipo de la institución de formación -->
+            <li class="academic__courses__item__title">
+              <h4>Proyecto Oracle-Alura</h4>
+            </li>
+            <li class="academic__courses__item__img">
+              <img
+                src="assets/img/alura_logo.png"
+                class="academic__courses__item__logo"
+              />
+            </li>
+            <li class="academic__courses__item__subtitle">
+              <p>En curso - Alura</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <hr />
     <!-- Sección de Experiencia Profesional/Proyectos-->
     <section class="experience" id="xp">
-        <h2 class="experience__section__title" >Proyectos <span style="color: #f5f5f5;">Realizados</span></h2>
-        <div class="experience__gradient">
-            <div class="experience__slider">
-                <ul class="experience__slider__list">
-                    <li class="experience__slider__item"><img src="assets/img/Encriptador.png" alt=""></li>
-                    <li class="experience__slider__item"><img src="assets/img/ahorcado.jpg" alt=""></li>
-                    <li class="experience__slider__item"><img src="assets/img/Sin título.png" alt=""></li>
-                </ul>
-            </div>
+      <h2 class="experience__section__title">
+        Proyectos <span style="color: #f5f5f5">Realizados</span>
+      </h2>
+      <div class="experience__gradient">
+        <div class="experience__slider">
+          <ul class="experience__slider__list">
+            <li class="experience__slider__item">
+              <img src="assets/img/Encriptador.png" alt="" />
+            </li>
+            <li class="experience__slider__item">
+              <img src="assets/img/ahorcado.jpg" alt="" />
+            </li>
+            <li class="experience__slider__item">
+              <img src="assets/img/e-commerce.png" alt="" />
+            </li>
+            <li class="experience__slider__item">
+              <img src="assets/img/Conversor.png" alt="" />
+            </li>
+            <li class="experience__slider__item">
+              <img src="assets/img/hotelAlura.png" alt="" />
+            </li>
+            <li class="experience__slider__item">
+              <img src="assets/img/Sin título.png" alt="" />
+            </li>
+          </ul>
         </div>
-        <div class="experience__box__caja">
-            <hr class="linea">
-            <div class="experience__box">
-                <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
-                <h2 class="experience__title">Encriptador de texto</h2>
-                <div class="experience__dropdown">
-                    <p>Este proyecto/Challenge Se basa en un encriptador/desencriptador tomando características básicas en programación como: HTML:5, CSS, JavaScript. Dándole un estilo básico de fácil manejo para el usuario, Además la parte lógica realizada con JavaScript se cumple los requisitos estimados de nuestros instructores para tener un buen funcionamiento y darle al usuario una buena imagen del proyecto.</p>
-                </div>
-                <img class="experience__img" src="assets/img/Encriptador.png">
-                <div class="experience__info">
-                    <h3 class="experience__text">Challenge Alura Codificador </h3>
-                        <div class="experience__description">
-                            <!-- Pon el enlace del proyecto en Github o GithubPages -->
-                                <span class="experience__repo"><a href="https://github.com/andresgomez-77/challenge-encriptador-oracle"><button class="experiencia__botao--repo"><img src="assets/icons/github.png" alt="" class="experiencia__botao--repo__img"></button></a></span>
-                                <span class="experience__demo"><a href="https://andresgomez-77.github.io/challenge-encriptador-oracle/"><button class="experience__botao--demo"><img src="assets/icons/page_web.png" alt="" class="experiencia__botao--demo__img"></button></a></span>
-                        </div>
-                </div>
-            </div>  
-            <hr class="linea">
-            <div class="experience__box">
-                <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
-                <h2 class="experience__title">Juego del Ahorcado</h2>
-                <div class="experience__dropdown">
-                    <p>Bienvenidos al juego del ahorcado, algo que nos lleva a recorrer nuestra infancia. El cual lo llevamos a la plataforma digital a través de una página web diseñada con programación (HMTL5, CSS, JAVASCRIPT); con un estilo siniestro, agregándole música de suspenso para hacerlo más emocionante para jugarlo, el cual tiene sus respectivos botones para pausar y continuar.</p>
-                </div>
-                <img class="experience__img" src="assets/img/ahorcado.jpg">
-                <div class="experience__info">
-                    <h3 class="experience__text">Challenge Oracle </h3>
-                        <div class="experience__description">
-                            <!-- Pon el enlace del proyecto en Github o GithubPages -->
-                                <span class="experience__repo"><a href="https://github.com/andresgomez-77/Juego-del-Ahorcado" >
-                                    <button class="experiencia__botao--repo" ><img src="assets/icons/github.png" alt="" class="experiencia__botao--repo__img"></button></a>
-                                </span>
-                                <span class="experience__demo"><a href="https://andresgomez-77.github.io/Juego-del-Ahorcado/" style="cursor:pointer;">
-                                    <button class="experience__botao--demo"></button><img src="assets/icons/page_web.png" alt="" class="experiencia__botao--demo__img"></button></a>
-                                </span>
-                        </div>
-                </div>
-            </div>  
-            <hr class="linea">
-            <div class="experience__box">
-                <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
-                    <h2 class="experience__title">StarJeak Streaming</h2>
-                    <div class="experience__dropdown">
-                        <p>Este proyecto realizado en CREHANA, Introducción al Desarrollo Web front-end: HTML y CSS desde cero. Consiste en el diseño de una página web para el entretenimiento de diferentes tipos de personas. Esta divida entre diferentes secciones (Inicio, Streaming, Música, Juegos, Contacto), con la idea de satisfacer al usuario que acceda a mi página web y tenga diferentes medios de entretenimiento. </p>
-                    </div>
-                    <img class="experience__img" src="assets/img/Sin título.png">
-                    <div class="experience__info-container">
-                        <h3 class="experience__text">Página Personal </h3>
-                        <div class="experience__description">
-                                <!-- Pon el enlace del proyecto en Github o GithubPages -->
-                                <span class="experience__repo"><a href="https://github.com/andresgomez-77/Starjeak"><button class="experiencia__botao--repo"><img src="assets/icons/github.png" alt="" class="experiencia__botao--repo__img"></button></a></span>
-                                <span class="experience__demo"><a href="https://andresgomez-77.github.io/Starjeak/"><button class="experience__botao--demo"><img src="assets/icons/page_web.png" alt="" class="experiencia__botao--demo__img"></button></a></span>
-                        </div>
-                    </div>  
+      </div>
+      <div class="experience__box__caja">
+        <div class="experience__box__caja__bloque">
+          <hr class="linea" />
+          <div class="experience__box">
+            <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
+            <h2 class="experience__title">Encriptador de texto</h2>
+            <div class="experience__dropdown">
+              <p>
+                El proyecto/Challenge Se basa en un encriptador/desencriptador
+                tomando características básicas en programación como: HTML:5,
+                CSS, JavaScript. Dándole un estilo básico de fácil manejo para
+                el usuario, Además la parte lógica realizada con JavaScript se
+                cumple los requisitos estimados de nuestros instructores para
+                tener un buen funcionamiento y darle al usuario una buena imagen
+                del proyecto.
+              </p>
             </div>
+            <img class="experience__img" src="assets/img/Encriptador.png" />
+            <div class="experience__info">
+              <h3 class="experience__text">Challenge Alura Codificador</h3>
+              <div class="experience__description">
+                <!-- Pon el enlace del proyecto en Github o GithubPages -->
+                <span class="experience__repo"
+                  ><a
+                    href="https://github.com/andresgomez-77/challenge-encriptador-oracle"
+                    ><button class="experiencia__botao--repo">
+                      <img
+                        src="assets/icons/github.png"
+                        alt=""
+                        class="experiencia__botao--repo__img"
+                      /></button></a
+                ></span>
+                <span class="experience__demo"
+                  ><a
+                    href="https://andresgomez-77.github.io/challenge-encriptador-oracle/"
+                    ><button class="experience__botao--demo">
+                      <img
+                        src="assets/icons/page_web.png"
+                        alt=""
+                        class="experiencia__botao--demo__img"
+                      /></button></a
+                ></span>
+              </div>
+            </div>
+          </div>
+          <hr class="linea" />
+          <div class="experience__box">
+            <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
+            <h2 class="experience__title">Juego del Ahorcado</h2>
+            <div class="experience__dropdown">
+              <p>
+                Bienvenidos al juego del ahorcado, algo que nos lleva a recorrer
+                nuestra infancia. El cual lo llevamos a la plataforma digital a
+                través de una página web diseñada con programación (HMTL5, CSS,
+                JAVASCRIPT); con un estilo siniestro, agregándole música de
+                suspenso para hacerlo más emocionante para jugarlo, el cual
+                tiene sus respectivos botones para pausar y continuar.
+              </p>
+            </div>
+            <img class="experience__img" src="assets/img/ahorcado.jpg" />
+            <div class="experience__info">
+              <h3 class="experience__text">Challenge Oracle + ALURA</h3>
+              <div class="experience__description">
+                <!-- Pon el enlace del proyecto en Github o GithubPages -->
+                <span class="experience__repo"
+                  ><a
+                    href="https://github.com/andresgomez-77/Juego-del-Ahorcado"
+                  >
+                    <button class="experiencia__botao--repo">
+                      <img
+                        src="assets/icons/github.png"
+                        alt=""
+                        class="experiencia__botao--repo__img"
+                      /></button
+                  ></a>
+                </span>
+                <span class="experience__demo"
+                  ><a
+                    href="https://andresgomez-77.github.io/Juego-del-Ahorcado/"
+                    style="cursor: pointer"
+                  >
+                    <button class="experience__botao--demo">
+                      <img
+                        src="assets/icons/page_web.png"
+                        alt=""
+                        class="experiencia__botao--demo__img"
+                      /></button
+                  ></a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <hr class="linea" />
+          <div class="experience__box">
+            <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
+            <h2 class="experience__title">Tienda Virtual</h2>
+            <div class="experience__dropdown">
+              <p>
+                El proyecto “E-commerce” cuenta con un diseño personalizado, el
+                cual consiste en una empresa de ventas de elementos de
+                construcción. Cuenta con algunas opciones las cuales le
+                permitirán al administrador que tenga acceso para iniciar
+                sesión, añadir, editar y eliminar productos al sistema. Hecho
+                con programación JavaScript, HTML, CSS.
+              </p>
+            </div>
+            <img class="experience__img" src="assets/img/e-commerce.png" />
+            <div class="experience__info">
+              <h3 class="experience__text">Challenge Oracle + ALURA</h3>
+              <div class="experience__description">
+                <!-- Pon el enlace del proyecto en Github o GithubPages -->
+                <span class="experience__repo"
+                  ><a href="https://github.com/andresgomez-77/E-commerce">
+                    <button class="experiencia__botao--repo">
+                      <img
+                        src="assets/icons/github.png"
+                        alt=""
+                        class="experiencia__botao--repo__img"
+                      /></button
+                  ></a>
+                </span>
+                <span class="experience__demo"
+                  ><a
+                    href="https://andresgomez-77.github.io/E-commerce/"
+                    style="cursor: pointer"
+                  >
+                    <button class="experience__botao--demo">
+                      <img
+                        src="assets/icons/page_web.png"
+                        alt=""
+                        class="experiencia__botao--demo__img"
+                      /></button
+                  ></a>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
-    </section>      
-    <hr>
+        <div class="experience__box__caja__bloque">
+          <hr class="linea" />
+          <div class="experience__box">
+            <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
+            <h2 class="experience__title">Conversor De Moneda</h2>
+            <div class="experience__dropdown">
+              <p>
+                El programa está desarrollado con Java mediante la herramienta
+                Eclipse, la cual funciona aplicando una lógica de sistema de
+                conversión de monedas, de pesos colombianos a diferentes divisas
+                y viceversa, como base principal. Como tema secundario, se
+                incluye un sistema de conversión de masas, de gramos a las
+                diferentes unidades de peso y viceversa, como challenge
+                propuesto por la plataforma Alura y ONE.
+              </p>
+            </div>
+            <img class="experience__img" src="assets/img/Conversor.png" />
+            <div class="experience__info">
+              <h3 class="experience__text">Challenge Oracle + ALURA</h3>
+              <div class="experience__description">
+                <!-- Pon el enlace del proyecto en Github o GithubPages -->
+                <span class="experience__repo"
+                  ><a
+                    href="https://github.com/andresgomez-77/Conversor-de-Moneda"
+                  >
+                    <button class="experiencia__botao--repo">
+                      <img
+                        src="assets/icons/github.png"
+                        alt=""
+                        class="experiencia__botao--repo__img"
+                      /></button
+                  ></a>
+                </span>
+                <span class="experience__demo"
+                  ><a href="" style="cursor: pointer">
+                    <button class="experience__botao--demo">
+                      <img
+                        src="assets/icons/page_web.png"
+                        alt=""
+                        class="experiencia__botao--demo__img"
+                      /></button
+                  ></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <hr class="linea" />
+          <div class="experience__box">
+            <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
+            <h2 class="experience__title">Hotel Alura</h2>
+            <div class="experience__dropdown">
+              <p>
+                Challenge propuesto por ALURA y ONE. Trata de un sistema de
+                reservas para hotel, controlando y administrando de forma optima
+                el flujo de reservas y huespedes del hotel.
+              </p>
+            </div>
+            <img class="experience__img" src="assets/img/hotelAlura.png" />
+            <div class="experience__info">
+              <h3 class="experience__text">Challenge Oracle + ALURA</h3>
+              <div class="experience__description">
+                <!-- Pon el enlace del proyecto en Github o GithubPages -->
+                <span class="experience__repo"
+                  ><a href="https://github.com/andresgomez-77/hotel-alura">
+                    <button class="experiencia__botao--repo">
+                      <img
+                        src="assets/icons/github.png"
+                        alt=""
+                        class="experiencia__botao--repo__img"
+                      /></button
+                  ></a>
+                </span>
+                <span class="experience__demo"
+                  ><a href="" style="cursor: pointer">
+                    <button class="experience__botao--demo">
+                      <img
+                        src="assets/icons/page_web.png"
+                        alt=""
+                        class="experiencia__botao--demo__img"
+                      /></button
+                  ></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <hr class="linea" />
+          <div class="experience__box">
+            <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
+            <h2 class="experience__title">StarJeak Streaming</h2>
+            <div class="experience__dropdown">
+              <p>
+                El proyecto realizado en CREHANA, Introducción al Desarrollo Web
+                front-end: HTML y CSS desde cero. Consiste en el diseño de una
+                página web para el entretenimiento de diferentes tipos de
+                personas. Esta divida entre diferentes secciones (Inicio,
+                Streaming, Música, Juegos, Contacto), con la idea de satisfacer
+                al usuario que acceda a mi página web y tenga diferentes medios
+                de entretenimiento.
+              </p>
+            </div>
+            <img class="experience__img" src="assets/img/Sin título.png" />
+            <div class="experience__info-container">
+              <h3 class="experience__text">Página Personal</h3>
+              <div class="experience__description">
+                <!-- Pon el enlace del proyecto en Github o GithubPages -->
+                <span class="experience__repo"
+                  ><a href="https://github.com/andresgomez-77/Starjeak"
+                    ><button class="experiencia__botao--repo">
+                      <img
+                        src="assets/icons/github.png"
+                        alt=""
+                        class="experiencia__botao--repo__img"
+                      /></button></a
+                ></span>
+                <span class="experience__demo"
+                  ><a href="https://andresgomez-77.github.io/Starjeak/"
+                    ><button class="experience__botao--demo">
+                      <img
+                        src="assets/icons/page_web.png"
+                        alt=""
+                        class="experiencia__botao--demo__img"
+                      /></button></a
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
     <!-- Sección de Hobbies -->
     <section class="hobbies" id="hobbies">
-        <div class="hobbies__container">
-            <div class="hobbies__container2">
-                <h3 class="hobbies__title">Pasa<br> <span style="color: #f5f5f5;">tiempos</span></h3>
-                <div class="hobbies__curva"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M208.08,0.00 C152.69,67.09 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z" style="stroke: none; fill: #5BCAF3;"></path></svg></div>
-            </div>
-            <div class="hobbies__line">
-                <div class="hobbies__line__box">
-                    <h3 class="hobbies__subtitle">Pasatiempo en casa:</h3>
-                <div class="hobbies__father__box">
-                    <div class="hobbies__box">
-                        <ul>
-                            <li class="hobbies__img"> <img src="assets/icons/headphones_icon.png" alt=""></li>
-                            <li class="hobbies__name">Oir música</li>
-                        </ul>
-                    </div>
-                    <div class="hobbies__box">
-                        <ul>
-                            <li class="hobbies__img"> <img src="assets/icons/forkspoon_icon.png" alt=""> </li>
-                            <li class="hobbies__name">Cocinar y Comer</li>
-                        </ul>
-                    </div>
-                    <div class="hobbies__box">
-                        <ul>
-                            <li class="hobbies__img"><img src="assets/icons/videojuegos.png"></li>
-                            <li class="hobbies__name"> VideoJuegos</li>
-                        </ul>
-                    </div>
-                </div>
-                </div>
-                <div class="hobbies__line__box">
-                    <h3 class="hobbies__subtitle">Pasatiempo al aire:</h3>
-                <div class="hobbies__father__box">
-                    <div class="hobbies__box">
-                        <ul>
-                            <li class="hobbies__img"> <img src="assets/icons/futbol.png" alt=""></li>
-                            <li class="hobbies__name">Futbol</li>
-                        </ul>
-                    </div>
-                    <div class="hobbies__box">
-                        <ul>
-                            <li class="hobbies__img"><img src="assets/icons/tennis.png" alt=""></li>
-                            <li class="hobbies__name">Tennis</li>
-                        </ul>
-                    </div>
-                    <div class="hobbies__box">
-                        <ul>
-                            <li class="hobbies__img"> <img src="assets/icons/playa.png" alt=""> </li>
-                            <li class="hobbies__name">Pasear</li>
-                        </ul>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
+      <div class="hobbies__container">
+        <div class="hobbies__container2">
+          <h3 class="hobbies__title">
+            Pasa<br />
+            <span style="color: #f5f5f5">tiempos</span>
+          </h3>
+          <div class="hobbies__curva">
+            <svg
+              viewBox="0 0 500 150"
+              preserveAspectRatio="none"
+              style="height: 100%; width: 100%"
+            >
+              <path
+                d="M208.08,0.00 C152.69,67.09 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z"
+                style="stroke: none; fill: #5bcaf3"
+              ></path>
+            </svg>
+          </div>
         </div>
-        
+        <div class="hobbies__line">
+          <div class="hobbies__line__box">
+            <h3 class="hobbies__subtitle">Pasatiempo en casa:</h3>
+            <div class="hobbies__father__box">
+              <div class="hobbies__box">
+                <ul>
+                  <li class="hobbies__img">
+                    <img src="assets/icons/headphones_icon.png" alt="" />
+                  </li>
+                  <li class="hobbies__name">Oir música</li>
+                </ul>
+              </div>
+              <div class="hobbies__box">
+                <ul>
+                  <li class="hobbies__img">
+                    <img src="assets/icons/forkspoon_icon.png" alt="" />
+                  </li>
+                  <li class="hobbies__name">Cocinar y Comer</li>
+                </ul>
+              </div>
+              <div class="hobbies__box">
+                <ul>
+                  <li class="hobbies__img">
+                    <img src="assets/icons/videojuegos.png" />
+                  </li>
+                  <li class="hobbies__name">VideoJuegos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="hobbies__line__box">
+            <h3 class="hobbies__subtitle">Pasatiempo al aire:</h3>
+            <div class="hobbies__father__box">
+              <div class="hobbies__box">
+                <ul>
+                  <li class="hobbies__img">
+                    <img src="assets/icons/futbol.png" alt="" />
+                  </li>
+                  <li class="hobbies__name">Futbol</li>
+                </ul>
+              </div>
+              <div class="hobbies__box">
+                <ul>
+                  <li class="hobbies__img">
+                    <img src="assets/icons/tennis.png" alt="" />
+                  </li>
+                  <li class="hobbies__name">Tennis</li>
+                </ul>
+              </div>
+              <div class="hobbies__box">
+                <ul>
+                  <li class="hobbies__img">
+                    <img src="assets/icons/playa.png" alt="" />
+                  </li>
+                  <li class="hobbies__name">Pasear</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <hr>
+    <hr />
     <!-- Sección de Contacto -->
     <section class="formcontato" id="contacto">
-        <div  class="formcontato__contacto">
-            <div class="formcontato__marcotitle">
-                <h2 class="formcontato__title">Mi <span style="color: #f5f5f5;">Contacto</span></h2>
-                <div class="formcontato__page">
-                    <span class="formcontato__page__link"><a href="https://github.com/andresgomez-77"><button class="formcontato__boton"><img src="assets/icons/github.png" alt="" class="formcontato__boton__img"></button></a></span>
-                    <span class="formcontato__page__link"><a href="https://www.linkedin.com/in/andrés-gómez/"><button class="formcontato__boton"><img src="assets/icons/linked.png" alt="" class="formcontato__boton__img"></button></a></span>
-                </div>
-                <div class="formcontato__information">
-                    <h3 class="formcontato__subtext">¿Quieres contactarme?</h3>
-                    <h3 class="formcontato__subtext">Complete el siguiente formulario y me pondré en contacto con usted lo antes posible. </h3>
-                </div>
-            </div>
-            <div class="formcontato__text" >
-                <form class="formcontato__form" name="form" id="formulario">
-                    <div class="col-3" id="formcontato__nombre">
-                        <label class="formcontato__label" for="nombre">Nombre:</label>
-                        <div class="formcontato__form-input">
-                            <input class="formcontato__input" type="text" name="nombre" id="nombre" placeholder="Nombre" >
-                            <i class="formcontato__validacion-estado fas fa-times-circle"></i>
-                            <span class="focus-border"></span>
-                            
-                        </div>
-                        <p class="formcontato__input-error">El nombre solo puede contener letras y acentos.</p>
-                    </div>    
-                    <div class="col-3" id="formcontato__email">
-                        <label class="formcontato__label" for="email">Correo:</label>
-                        <div class="formcontato__form-input">
-                            <input class="formcontato__input" type="email" name="email" placeholder="E-mail" >
-                            <i class="formcontato__validacion-estado fas fa-times-circle"></i>
-                            <span class="focus-border"></span>
-                        </div>
-                        <p class="formcontato__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-                    </div> 
-                    <div class="col-3" id="formcontato__asunto">
-                        <label class="formcontato__label" for="Mensaje">Asunto:</label>
-                        <div class="formcontato__form-input">
-                            <input class="formcontato__input" type="text" name="asunto" placeholder="Asunto" >
-                            <i class="formcontato__validacion-estado fas fa-times-circle"></i>
-                            <span class="focus-border"></span>
-                        </div>
-                        <p class="formcontato__input-error">El asunto tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-                    </div>   
-                    <div class="col-3" id="cuadro__message">
-                        <label class="formcontato__label" for="Mensaje">Mensaje:</label>
-                        <textarea class="formcontato__input" rows="5" cols="40" id="mensage" name="mensaje" placeholder="Mensaje"></textarea>
-                        <div class="advertence">Maximo de caracteres restantes: <span class="counter">300</span></div>
-                        <span class="focus-border"></span>
-                        <div class="formcontato__campotext" id="formcontato__campotext">
-                            <p id="campoVacio">Campos vacios, porfavor ingresa tus datos y mensaje.</p>
-                        </div>
-
-                    </div>
-                    <div class="formcontato__mensaje" id="formcontato__mensaje">
-                        <p class="formcontato__mensaje__text"><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                    </div>
-                    <div class="col-3 col-3__grupo-btn-enviar">
-                        <button type="submit" class="formcontato__botao" id="envio">Enviar mensaje</button>
-                        <p class="formcontato__mensaje-exito" id="formcontato__mensaje-exito">Formulario enviado exitosamente!</p>
-                    </div>
-                    
-                </form>
-            </div>
+      <div class="formcontato__contacto">
+        <div class="formcontato__marcotitle">
+          <h2 class="formcontato__title">
+            Mi <span style="color: #f5f5f5">Contacto</span>
+          </h2>
+          <div class="formcontato__page">
+            <span class="formcontato__page__link"
+              ><a href="https://github.com/andresgomez-77"
+                ><button class="formcontato__boton">
+                  <img
+                    src="assets/icons/github.png"
+                    alt=""
+                    class="formcontato__boton__img"
+                  /></button></a
+            ></span>
+            <span class="formcontato__page__link"
+              ><a href="https://www.linkedin.com/in/andrés-gómez/"
+                ><button class="formcontato__boton">
+                  <img
+                    src="assets/icons/linked.png"
+                    alt=""
+                    class="formcontato__boton__img"
+                  /></button></a
+            ></span>
+          </div>
+          <div class="formcontato__information">
+            <h3 class="formcontato__subtext">¿Quieres contactarme?</h3>
+            <h3 class="formcontato__subtext">
+              Complete el siguiente formulario y me pondré en contacto con usted
+              lo antes posible.
+            </h3>
+          </div>
         </div>
+        <div class="formcontato__text">
+          <form class="formcontato__form" name="form" id="formulario">
+            <div class="col-3" id="formcontato__nombre">
+              <label class="formcontato__label" for="nombre">Nombre:</label>
+              <div class="formcontato__form-input">
+                <input
+                  class="formcontato__input"
+                  type="text"
+                  name="nombre"
+                  id="nombre"
+                  placeholder="Nombre"
+                />
+                <i
+                  class="formcontato__validacion-estado fas fa-times-circle"
+                ></i>
+                <span class="focus-border"></span>
+              </div>
+              <p class="formcontato__input-error">
+                El nombre solo puede contener letras y acentos.
+              </p>
+            </div>
+            <div class="col-3" id="formcontato__email">
+              <label class="formcontato__label" for="email">Correo:</label>
+              <div class="formcontato__form-input">
+                <input
+                  class="formcontato__input"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                />
+                <i
+                  class="formcontato__validacion-estado fas fa-times-circle"
+                ></i>
+                <span class="focus-border"></span>
+              </div>
+              <p class="formcontato__input-error">
+                El correo solo puede contener letras, numeros, puntos, guiones y
+                guion bajo.
+              </p>
+            </div>
+            <div class="col-3" id="formcontato__asunto">
+              <label class="formcontato__label" for="Mensaje">Asunto:</label>
+              <div class="formcontato__form-input">
+                <input
+                  class="formcontato__input"
+                  type="text"
+                  name="asunto"
+                  placeholder="Asunto"
+                />
+                <i
+                  class="formcontato__validacion-estado fas fa-times-circle"
+                ></i>
+                <span class="focus-border"></span>
+              </div>
+              <p class="formcontato__input-error">
+                El asunto tiene que ser de 4 a 16 dígitos y solo puede contener
+                numeros, letras y guion bajo.
+              </p>
+            </div>
+            <div class="col-3" id="cuadro__message">
+              <label class="formcontato__label" for="Mensaje">Mensaje:</label>
+              <textarea
+                class="formcontato__input"
+                rows="5"
+                cols="40"
+                id="mensage"
+                name="mensaje"
+                placeholder="Mensaje"
+              ></textarea>
+              <div class="advertence">
+                Maximo de caracteres restantes: <span class="counter">300</span>
+              </div>
+              <span class="focus-border"></span>
+              <div class="formcontato__campotext" id="formcontato__campotext">
+                <p id="campoVacio">
+                  Campos vacios, porfavor ingresa tus datos y mensaje.
+                </p>
+              </div>
+            </div>
+            <div class="formcontato__mensaje" id="formcontato__mensaje">
+              <p class="formcontato__mensaje__text">
+                <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por
+                favor rellena el formulario correctamente.
+              </p>
+            </div>
+            <div class="col-3 col-3__grupo-btn-enviar">
+              <button type="submit" class="formcontato__botao" id="envio">
+                Enviar mensaje
+              </button>
+              <p
+                class="formcontato__mensaje-exito"
+                id="formcontato__mensaje-exito"
+              >
+                Formulario enviado exitosamente!
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
-
-    <hr>
+    <hr />
     <!-- Sección de Footer -->
-    <section class="footer">
-        <div class="footer__rodape">
-            <div class="footer__page">
-                <span class="footer__page__link"><a href="https://github.com/andresgomez-77"><button class="footer__boton"><img src="assets/icons/github.png" alt="" class="footer__boton__img"></button></a></span>
-                <span class="footer__page__link"><a href="https://www.linkedin.com/in/andrés-gómez/"><button class="footer__boton"><img src="assets/icons/linked.png" alt="" class="footer__boton__img"></button></a></span>
-            </div>
-            <div class="footer__text">
-                <p>Desarrollado por <br> <span style="color: #f5f5f5;"><a href="#mi__portafolio">andrés gómez</a></span> &copy</p>
-                <p>2022</p>
-            </div>
+    <footer class="footer">
+      <div class="footer__rodape">
+        <div class="footer__page">
+          <span class="footer__page__link"
+            ><a href="https://github.com/andresgomez-77"
+              ><button class="footer__boton">
+                <img
+                  src="assets/icons/github.png"
+                  alt=""
+                  class="footer__boton__img"
+                /></button></a
+          ></span>
+          <span class="footer__page__link"
+            ><a href="https://www.linkedin.com/in/andrés-gómez/"
+              ><button class="footer__boton">
+                <img
+                  src="assets/icons/linked.png"
+                  alt=""
+                  class="footer__boton__img"
+                /></button></a
+          ></span>
         </div>
-    </section>
- <!-- Script del documento JavaScript -->
-<script src="validacion.js"></script>
-<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-</body>
+        <div class="footer__text">
+          <p>
+            Desarrollado por <br />
+            <span style="color: #f5f5f5"
+              ><a href="#mi__portafolio">andrés gómez</a></span
+            >
+            &copy
+          </p>
+          <p>2022</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Script del documento JavaScript -->
+    <script src="validacion.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/2c36e9b7b1.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

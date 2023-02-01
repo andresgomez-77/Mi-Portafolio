@@ -1,37 +1,56 @@
-section.menu, section.footer{
-    background-image: linear-gradient(135deg,#AED3E3,#86BEDA,#00B7D4,#3E77B6,#003A88,#C5D4EB);
-    background-size: 500%;
-    animation: fanimado 10s infinite;
+section.menu,
+section.footer {
+  background-image: linear-gradient(
+    135deg,
+    #aed3e3,
+    #86beda,
+    #00b7d4,
+    #3e77b6,
+    #003a88,
+    #c5d4eb
+  );
+  background-size: 500%;
+  animation: fanimado 10s infinite;
 }
 @keyframes fanimado {
-    0%{
-        background-position: 0% 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 20%;
+  }
+  20% {
+    background-position: 20% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.wave{
-    background-image: linear-gradient(135deg,#AED3E3,#86BEDA,#00B7D4,#3E77B6,#003A88,#C5D4EB);
-    background-size: 500%;
-    animation: yanimado 10s infinite;
+.wave {
+  background-image: linear-gradient(
+    135deg,
+    #aed3e3,
+    #86beda,
+    #00b7d4,
+    #3e77b6,
+    #003a88,
+    #c5d4eb
+  );
+  background-size: 500%;
+  animation: yanimado 10s infinite;
 }
 @keyframes yanimado {
-    0%{
-        background-position: 0% 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.menu__cara{
-    border-bottom: 3px solid blueviolet;
-    border-left: 4px dotted blue;
+.menu__cara {
+  border-bottom: 3px solid blueviolet;
+  border-left: 4px dotted blue;
 }
-
