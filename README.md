@@ -1,3 +1,5 @@
+# En proceso de actualizacion agregando nuevas tecnologias principalmente REACT.
+
 # Challenge ONE | Front End -  Portafolio
 
 <p align="center" >
