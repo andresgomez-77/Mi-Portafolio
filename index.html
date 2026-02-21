@@ -1,25 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portafolio de Andrés Felipe Gómez Pinzón - Ingeniero Electrónico y Desarrollador Front-End Junior" />
+    <meta
+      name="description"
+      content="Portafolio de Andrés Felipe Gómez Pinzón - Ingeniero Electrónico y Desarrollador Front-End Junior"
+    />
     <title>Andrés Gómez | Dev</title>
     <link rel="shortcut icon" href="assets/icons/cv.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-
     <!-- ===== CURSOR PERSONALIZADO ===== -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursor-follower"></div>
@@ -48,13 +56,49 @@
       </button>
 
       <ul class="navbar__menu" id="nav-menu" role="menubar">
-        <li role="none"><a href="#sobre-mi" class="navbar__link" role="menuitem" tabindex="0">Sobre mí</a></li>
-        <li role="none"><a href="#skills" class="navbar__link" role="menuitem" tabindex="0">Skills</a></li>
-        <li role="none"><a href="#proyectos" class="navbar__link" role="menuitem" tabindex="0">Proyectos</a></li>
-        <li role="none"><a href="#formacion" class="navbar__link" role="menuitem" tabindex="0">Formación</a></li>
-        <li role="none"><a href="#contacto" class="navbar__link" role="menuitem" tabindex="0">Contacto</a></li>
         <li role="none">
-          <a href="assets/doc/Hoja de vida_Andres Gomez.pdf" target="_blank" class="navbar__cv-btn" role="menuitem" tabindex="0" aria-label="Descargar CV">
+          <a href="#sobre-mi" class="navbar__link" role="menuitem" tabindex="0"
+            >Sobre mí</a
+          >
+        </li>
+        <li role="none">
+          <a
+            href="#experiencia"
+            class="navbar__link"
+            role="menuitem"
+            tabindex="0"
+            >Experiencia</a
+          >
+        </li>
+        <li role="none">
+          <a href="#skills" class="navbar__link" role="menuitem" tabindex="0"
+            >Skills</a
+          >
+        </li>
+        <li role="none">
+          <a href="#proyectos" class="navbar__link" role="menuitem" tabindex="0"
+            >Proyectos</a
+          >
+        </li>
+        <li role="none">
+          <a href="#formacion" class="navbar__link" role="menuitem" tabindex="0"
+            >Formación</a
+          >
+        </li>
+        <li role="none">
+          <a href="#contacto" class="navbar__link" role="menuitem" tabindex="0"
+            >Contacto</a
+          >
+        </li>
+        <li role="none">
+          <a
+            href="assets/doc/C.V.%20-%20Andrés%20Felipe%20Gómez%20P.pdf"
+            target="_blank"
+            class="navbar__cv-btn"
+            role="menuitem"
+            tabindex="0"
+            aria-label="Descargar CV"
+          >
             <i class="fas fa-download" aria-hidden="true"></i> CV
           </a>
         </li>
@@ -84,40 +128,77 @@
 
         <div class="hero__role-wrapper" aria-label="Rol profesional">
           <span class="hero__role-prefix">_</span>
-          <span class="hero__role-text" id="typewriter" aria-live="polite"></span>
+          <span
+            class="hero__role-text"
+            id="typewriter"
+            aria-live="polite"
+          ></span>
           <span class="hero__cursor" aria-hidden="true">|</span>
         </div>
 
         <p class="hero__description">
-          Ingeniero Electrónico en transición al mundo del <strong>desarrollo web</strong>.
-          Apasionado por crear interfaces que conecten a las personas con la tecnología.
+          Ingeniero Electrónico | Desarrollador Frontend / Full Stack (React,
+          TypeScript) | Administrador de Bases de Datos | Coordinador Técnico.
         </p>
 
         <div class="hero__cta">
-          <a href="#proyectos" class="btn btn--primary" tabindex="0" aria-label="Ver proyectos">
+          <a
+            href="#proyectos"
+            class="btn btn--primary"
+            tabindex="0"
+            aria-label="Ver proyectos"
+          >
             Ver proyectos <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
-          <a href="#contacto" class="btn btn--outline" tabindex="0" aria-label="Contactarme">
+          <a
+            href="#contacto"
+            class="btn btn--outline"
+            tabindex="0"
+            aria-label="Contactarme"
+          >
             Contáctame
           </a>
         </div>
 
         <!-- Redes sociales -->
         <div class="hero__social" aria-label="Redes sociales">
-          <a href="https://github.com/andresgomez-77" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub de Andrés" tabindex="0">
+          <a
+            href="https://github.com/andresgomez-77"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="GitHub de Andrés"
+            tabindex="0"
+          >
             <i class="fab fa-github" aria-hidden="true"></i>
           </a>
-          <a href="https://www.linkedin.com/in/andr%C3%A9s-g%C3%B3mez-b1b7b9226/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn de Andrés" tabindex="0">
+          <a
+            href="https://www.linkedin.com/in/andr%C3%A9s-g%C3%B3mez-b1b7b9226/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="LinkedIn de Andrés"
+            tabindex="0"
+          >
             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>
-          <a href="mailto:tu-email@gmail.com" class="social-icon" aria-label="Enviar email a Andrés" tabindex="0">
+          <a
+            href="mailto:tu-email@gmail.com"
+            class="social-icon"
+            aria-label="Enviar email a Andrés"
+            tabindex="0"
+          >
             <i class="fas fa-envelope" aria-hidden="true"></i>
           </a>
         </div>
       </div>
 
       <!-- Scroll indicator -->
-      <a href="#sobre-mi" class="hero__scroll" aria-label="Ir a la siguiente sección">
+      <a
+        href="#sobre-mi"
+        class="hero__scroll"
+        aria-label="Ir a la siguiente sección"
+      >
         <span class="hero__scroll-text">scroll</span>
         <i class="fas fa-chevron-down" aria-hidden="true"></i>
       </a>
@@ -135,12 +216,17 @@
           <!-- Foto -->
           <div class="about__photo reveal">
             <div class="about__photo-wrapper">
-              <img src="assets/img/cara.jpg" alt="Foto de Andrés Felipe Gómez Pinzón" class="about__img" loading="lazy" />
+              <img
+                src="assets/img/cara.png"
+                alt="Foto de Andrés Felipe Gómez Pinzón"
+                class="about__img"
+                loading="lazy"
+              />
               <div class="about__photo-border" aria-hidden="true"></div>
               <!-- Badge de experiencia -->
               <div class="about__badge" aria-label="Años de experiencia">
                 <span class="about__badge-number">2+</span>
-                <span class="about__badge-text">años en<br>desarrollo</span>
+                <span class="about__badge-text">años en<br />desarrollo</span>
               </div>
             </div>
           </div>
@@ -148,19 +234,16 @@
           <!-- Texto -->
           <div class="about__text reveal">
             <p class="about__paragraph">
-              Soy un <strong>Ingeniero Electrónico</strong> graduado de la UTS con
-              una gran pasión por el desarrollo web. Combinando mi formación en
-              electrónica con el mundo del código, construyo interfaces que son
-              tanto funcionales como visualmente atractivas.
-            </p>
-            <p class="about__paragraph">
-              Actualmente en formación continua, cursando el programa
-              <strong>Oracle ONE + Alura</strong>, donde refuerzo mis conocimientos
-              en programación y desarrollo front-end con tecnologías modernas.
-            </p>
-            <p class="about__paragraph">
-              Mi objetivo es crecer como profesional en el área del desarrollo web,
-              aportando creatividad, disciplina y ganas de aprender en cada proyecto.
+              Ingeniero Electrónico con experiencia en desarrollo Frontend y
+              Full Stack, administración operativa de bases de datos SQL y
+              NoSQL, e integración de sistemas mediante APIs REST. He
+              participado en el desarrollo y validación de interfaces con React,
+              JavaScript y TypeScript, así como en la gestión de PostgreSQL y
+              PostGIS en entornos Linux, incluyendo backups, mantenimiento y
+              optimización de consultas. Cuento con experiencia coordinando
+              equipos técnicos multidisciplinarios bajo metodologías ágiles como
+              Scrum, con enfoque en la calidad, estabilidad y rendimiento de
+              soluciones de software.
             </p>
 
             <!-- Stats rápidas -->
@@ -183,63 +266,226 @@
       </div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
-    <section class="section skills" id="skills" aria-label="Habilidades técnicas">
+    <!-- ===== EXPERIENCIA ===== -->
+    <section
+      class="section experience"
+      id="experiencia"
+      aria-label="Experiencia profesional"
+    >
       <div class="container">
         <div class="section__header reveal">
-          <span class="section__tag">02. Skills</span>
+          <span class="section__tag">02. Experiencia</span>
+          <h2 class="section__title">Experiencia profesional</h2>
+        </div>
+
+        <div class="experience__timeline reveal">
+          <!-- Experiencia 1 -->
+          <div class="exp-card">
+            <div class="exp-card__header">
+              <h3 class="exp-card__title">
+                Coordinador de desarrollo de proyectos
+              </h3>
+              <span class="exp-card__company">ActionTracker Solutions SL</span>
+              <span class="exp-card__date">Junio 2023 - Actual</span>
+            </div>
+            <ul class="exp-card__list">
+              <li>
+                Coordinación técnica de equipos Frontend, Backend, GIS, QA y
+                análisis de datos bajo metodologías ágiles (Scrum).
+              </li>
+              <li>
+                Participación en el desarrollo y validación de interfaces
+                frontend utilizando React, JavaScript y TypeScript, integradas
+                con servicios backend mediante APIs REST.
+              </li>
+              <li>
+                Gestión de repositorios en GitHub utilizando Gitflow (branches,
+                issues, merges y releases).
+              </li>
+              <li>
+                Administración de bases de datos SQL y NoSQL (PostgreSQL,
+                PostGIS, MySQL, MongoDB), incluyendo creación de esquemas,
+                tablas, índices, particiones y control de integridad de datos.
+              </li>
+              <li>
+                Diseño y mantenimiento de esquemas de bases de datos, creación
+                de tablas, campos, índices y particiones, y actualización de
+                versiones de PostgreSQL y PostGIS.
+              </li>
+              <li>
+                Ejecución de respaldos (backups), restauración, monitoreo de
+                disponibilidad y optimización de consultas SQL para asegurar
+                rendimiento y continuidad operativa de bases de datos.
+              </li>
+              <li>
+                Soporte y mantenimiento de bases de datos utilizadas por
+                aplicaciones productivas, colaborando con equipos de desarrollo
+                y operaciones para la integración y consistencia de la
+                información.
+              </li>
+              <li>
+                Coordinación de despliegues utilizando Docker, Kubernetes y
+                Rancher, asegurando estabilidad de los entornos productivos.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section
+      class="section skills"
+      id="skills"
+      aria-label="Habilidades técnicas"
+    >
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">03. Skills</span>
           <h2 class="section__title">Lo que sé hacer</h2>
         </div>
 
         <div class="skills__grid">
           <!-- Categoría: Front-End -->
-          <div class="skills__category reveal" aria-label="Habilidades de Front-End">
+          <div
+            class="skills__category reveal"
+            aria-label="Habilidades de Front-End"
+          >
             <h3 class="skills__category-title">
               <span class="skills__category-icon" aria-hidden="true">⚡</span>
-              Front-End
+              Front-End - Back-End
             </h3>
             <div class="skills__list">
               <div class="skill-item">
                 <div class="skill-item__header">
                   <span class="skill-item__name">HTML5</span>
-                  <span class="skill-item__percent" aria-label="80 por ciento">80%</span>
+                  <span class="skill-item__percent" aria-label="100 por ciento"
+                    >100%</span
+                  >
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Dominio de HTML5">
-                  <div class="skill-item__fill" data-width="80"></div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="Dominio de HTML5"
+                >
+                  <div class="skill-item__fill" data-width="100"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-item__header">
                   <span class="skill-item__name">CSS3</span>
-                  <span class="skill-item__percent" aria-label="75 por ciento">75%</span>
+                  <span class="skill-item__percent" aria-label="100 por ciento"
+                    >100%</span
+                  >
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Dominio de CSS3">
-                  <div class="skill-item__fill" data-width="75"></div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="Dominio de CSS3"
+                >
+                  <div class="skill-item__fill" data-width="100"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-item__header">
                   <span class="skill-item__name">JavaScript</span>
-                  <span class="skill-item__percent" aria-label="65 por ciento">65%</span>
+                  <span class="skill-item__percent" aria-label="85 por ciento"
+                    >85%</span
+                  >
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Dominio de JavaScript">
-                  <div class="skill-item__fill" data-width="65"></div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="Dominio de JavaScript"
+                >
+                  <div class="skill-item__fill" data-width="85"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-item__header">
                   <span class="skill-item__name">React</span>
-                  <span class="skill-item__percent" aria-label="40 por ciento">40%</span>
+                  <span class="skill-item__percent" aria-label="80 por ciento"
+                    >80%</span
+                  >
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Dominio de React">
-                  <div class="skill-item__fill" data-width="40"></div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="Dominio de React"
+                >
+                  <div class="skill-item__fill" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">TypeScript</span>
+                  <span class="skill-item__percent" aria-label="80 por ciento"
+                    >80%</span
+                  >
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="Dominio de TypeScript"
+                >
+                  <div class="skill-item__fill" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Node.js</span>
+                  <span class="skill-item__percent">65%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="65"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="Dominio de Node.js"
+                >
+                  <div class="skill-item__fill" data-width="65"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Java-Spring Boot</span>
+                  <span class="skill-item__percent">30%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="30"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-label="Dominio de Java-Spring Boot"
+                >
+                  <div class="skill-item__fill" data-width="30"></div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Categoría: Ingeniería -->
-          <div class="skills__category reveal" aria-label="Habilidades de Ingeniería">
+          <div
+            class="skills__category reveal"
+            aria-label="Habilidades de Ingeniería"
+          >
             <h3 class="skills__category-title">
               <span class="skills__category-icon" aria-hidden="true">🔧</span>
               Ingeniería
@@ -250,7 +496,13 @@
                   <span class="skill-item__name">C++</span>
                   <span class="skill-item__percent">70%</span>
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
                   <div class="skill-item__fill" data-width="70"></div>
                 </div>
               </div>
@@ -259,7 +511,13 @@
                   <span class="skill-item__name">Arduino</span>
                   <span class="skill-item__percent">75%</span>
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
                   <div class="skill-item__fill" data-width="75"></div>
                 </div>
               </div>
@@ -268,7 +526,13 @@
                   <span class="skill-item__name">Matlab</span>
                   <span class="skill-item__percent">60%</span>
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
                   <div class="skill-item__fill" data-width="60"></div>
                 </div>
               </div>
@@ -277,30 +541,308 @@
                   <span class="skill-item__name">Java</span>
                   <span class="skill-item__percent">50%</span>
                 </div>
-                <div class="skill-item__bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
                   <div class="skill-item__fill" data-width="50"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Categoría: Herramientas -->
-          <div class="skills__category reveal" aria-label="Herramientas">
+          <!-- Categoría: Habilidades tecnicas -->
+          <div
+            class="skills__category reveal"
+            aria-label="Habilidades tecnicas"
+          >
             <h3 class="skills__category-title">
-              <span class="skills__category-icon" aria-hidden="true">🛠️</span>
-              Herramientas
+              <span class="skills__category-icon" aria-hidden="true">💻</span>
+              Habilidades tecnicas
             </h3>
-            <!-- Tags de herramientas -->
-            <div class="skills__tags" aria-label="Lista de herramientas">
-              <span class="skill-tag" tabindex="0">Git</span>
-              <span class="skill-tag" tabindex="0">GitHub</span>
-              <span class="skill-tag" tabindex="0">VS Code</span>
-              <span class="skill-tag" tabindex="0">Photoshop</span>
-              <span class="skill-tag" tabindex="0">Sony Vegas</span>
-              <span class="skill-tag" tabindex="0">Word</span>
-              <span class="skill-tag" tabindex="0">Excel</span>
-              <span class="skill-tag" tabindex="0">PowerPoint</span>
-              <span class="skill-tag" tabindex="0">Figma</span>
+            <div class="skills__list">
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Bootstrap</span>
+                  <span class="skill-item__percent">85%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">APIs REST</span>
+                  <span class="skill-item__percent">85%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">PostgreSQL</span>
+                  <span class="skill-item__percent">85%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">MongoDB</span>
+                  <span class="skill-item__percent">75%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Docker</span>
+                  <span class="skill-item__percent">80%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Git</span>
+                  <span class="skill-item__percent">95%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="95"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">SQL Optimization</span>
+                  <span class="skill-item__percent">90%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="90"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría: DevOps y Administración -->
+          <div
+            class="skills__category reveal"
+            aria-label="DevOps y Administración"
+          >
+            <h3 class="skills__category-title">
+              <span class="skills__category-icon" aria-hidden="true">⚙️</span>
+              DevOps y Bases de Datos
+            </h3>
+            <div class="skills__list">
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">PostGIS</span>
+                  <span class="skill-item__percent">90%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">MySQL</span>
+                  <span class="skill-item__percent">90%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="90"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Pentaho</span>
+                  <span class="skill-item__percent">70%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Linux</span>
+                  <span class="skill-item__percent">75%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Kubernetes</span>
+                  <span class="skill-item__percent">70%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Rancher</span>
+                  <span class="skill-item__percent">85%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Jenkins</span>
+                  <span class="skill-item__percent">75%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">AWS</span>
+                  <span class="skill-item__percent">60%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="60"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría: Idiomas -->
+          <div class="skills__category reveal" aria-label="Idiomas">
+            <h3 class="skills__category-title">
+              <span class="skills__category-icon" aria-hidden="true">🌍</span>
+              Idiomas
+            </h3>
+            <div class="skills__list">
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Español</span>
+                  <span class="skill-item__percent">100%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="100"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-item__header">
+                  <span class="skill-item__name">Inglés</span>
+                  <span class="skill-item__percent">65%</span>
+                </div>
+                <div
+                  class="skill-item__bar"
+                  role="progressbar"
+                  aria-valuenow="65"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="skill-item__fill" data-width="65"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -308,26 +850,39 @@
     </section>
 
     <!-- ===== PROYECTOS ===== -->
-    <section class="section projects" id="proyectos" aria-label="Proyectos realizados">
+    <section
+      class="section projects"
+      id="proyectos"
+      aria-label="Proyectos realizados"
+    >
       <div class="container">
         <div class="section__header reveal">
-          <span class="section__tag">03. Proyectos</span>
+          <span class="section__tag">04. Proyectos</span>
           <h2 class="section__title">Lo que he construido</h2>
         </div>
 
         <div class="projects__grid">
-
           <!-- Proyecto 1: Encriptador -->
-          <article class="project-card reveal" aria-label="Proyecto Encriptador de texto">
+          <article
+            class="project-card reveal"
+            aria-label="Proyecto Encriptador de texto"
+          >
             <div class="project-card__img-wrapper">
-              <img src="assets/img/Encriptador.png" alt="Captura del proyecto Encriptador de texto" class="project-card__img" loading="lazy" />
+              <img
+                src="assets/img/Encriptador.png"
+                alt="Captura del proyecto Encriptador de texto"
+                class="project-card__img"
+                loading="lazy"
+              />
               <div class="project-card__overlay" aria-hidden="true"></div>
               <span class="project-card__badge">Challenge Alura</span>
             </div>
             <div class="project-card__content">
               <h3 class="project-card__title">Encriptador de Texto</h3>
               <p class="project-card__desc">
-                Aplicación web que encripta y desencripta mensajes usando lógica de sustitución de caracteres. Hecho con HTML5, CSS y JavaScript puro.
+                Aplicación web que encripta y desencripta mensajes usando lógica
+                de sustitución de caracteres. Hecho con HTML5, CSS y JavaScript
+                puro.
               </p>
               <div class="project-card__tags" aria-label="Tecnologías usadas">
                 <span class="project-tag">HTML</span>
@@ -335,27 +890,52 @@
                 <span class="project-tag">JavaScript</span>
               </div>
               <div class="project-card__links">
-                <a href="https://github.com/andresgomez-77/challenge-encriptador-oracle" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub" tabindex="0">
+                <a
+                  href="https://github.com/andresgomez-77/challenge-encriptador-oracle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="Ver código en GitHub"
+                  tabindex="0"
+                >
                   <i class="fab fa-github" aria-hidden="true"></i> Código
                 </a>
-                <a href="https://andresgomez-77.github.io/challenge-encriptador-oracle/" target="_blank" rel="noopener noreferrer" class="project-link project-link--demo" aria-label="Ver demo en vivo" tabindex="0">
-                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                <a
+                  href="https://andresgomez-77.github.io/challenge-encriptador-oracle/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link--demo"
+                  aria-label="Ver demo en vivo"
+                  tabindex="0"
+                >
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  Demo
                 </a>
               </div>
             </div>
           </article>
 
           <!-- Proyecto 2: Ahorcado -->
-          <article class="project-card reveal" aria-label="Proyecto Juego del Ahorcado">
+          <article
+            class="project-card reveal"
+            aria-label="Proyecto Juego del Ahorcado"
+          >
             <div class="project-card__img-wrapper">
-              <img src="assets/img/ahorcado.jpg" alt="Captura del Juego del Ahorcado" class="project-card__img" loading="lazy" />
+              <img
+                src="assets/img/ahorcado.jpg"
+                alt="Captura del Juego del Ahorcado"
+                class="project-card__img"
+                loading="lazy"
+              />
               <div class="project-card__overlay" aria-hidden="true"></div>
               <span class="project-card__badge">Challenge Alura</span>
             </div>
             <div class="project-card__content">
               <h3 class="project-card__title">Juego del Ahorcado</h3>
               <p class="project-card__desc">
-                Juego interactivo del ahorcado con temática siniestra, música de suspenso y controles de audio. Diseñado para ser divertido e inmersivo.
+                Juego interactivo del ahorcado con temática siniestra, música de
+                suspenso y controles de audio. Diseñado para ser divertido e
+                inmersivo.
               </p>
               <div class="project-card__tags">
                 <span class="project-tag">HTML</span>
@@ -363,62 +943,122 @@
                 <span class="project-tag">JavaScript</span>
               </div>
               <div class="project-card__links">
-                <a href="https://github.com/andresgomez-77/Juego-del-Ahorcado" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub" tabindex="0">
+                <a
+                  href="https://github.com/andresgomez-77/Juego-del-Ahorcado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="Ver código en GitHub"
+                  tabindex="0"
+                >
                   <i class="fab fa-github" aria-hidden="true"></i> Código
                 </a>
-                <a href="https://andresgomez-77.github.io/Juego-del-Ahorcado/" target="_blank" rel="noopener noreferrer" class="project-link project-link--demo" aria-label="Ver demo en vivo" tabindex="0">
-                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                <a
+                  href="https://andresgomez-77.github.io/Juego-del-Ahorcado/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link--demo"
+                  aria-label="Ver demo en vivo"
+                  tabindex="0"
+                >
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  Demo
                 </a>
               </div>
             </div>
           </article>
 
           <!-- Proyecto 3: E-commerce -->
-          <article class="project-card reveal" aria-label="Proyecto Tienda Virtual E-commerce">
+          <article
+            class="project-card reveal"
+            aria-label="Proyecto Tienda Virtual E-commerce"
+          >
             <div class="project-card__img-wrapper">
-              <img src="assets/img/e-commerce.png" alt="Captura de la Tienda Virtual" class="project-card__img" loading="lazy" />
+              <img
+                src="assets/img/e-commerce.png"
+                alt="Captura de la Tienda Virtual"
+                class="project-card__img"
+                loading="lazy"
+              />
               <div class="project-card__overlay" aria-hidden="true"></div>
-              <span class="project-card__badge project-card__badge--featured">Destacado</span>
+              <span class="project-card__badge project-card__badge--featured"
+                >Destacado</span
+              >
             </div>
             <div class="project-card__content">
               <h3 class="project-card__title">Tienda Virtual</h3>
               <p class="project-card__desc">
-                E-commerce de materiales de construcción con sistema de login, gestión de productos (agregar, editar, eliminar) para administradores.
+                E-commerce de materiales de construcción con sistema de login,
+                gestión de productos (agregar, editar, eliminar) para
+                administradores. (En proceso de actualizacion FullStack)
               </p>
               <div class="project-card__tags">
-                <span class="project-tag">HTML</span>
-                <span class="project-tag">CSS</span>
-                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Tailwind CSS</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">Supabase</span>
+                <span class="project-tag">NextJS</span>
               </div>
               <div class="project-card__links">
-                <a href="https://github.com/andresgomez-77/E-commerce" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub" tabindex="0">
+                <a
+                  href="https://github.com/andresgomez-77/E-commerce"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="Ver código en GitHub"
+                  tabindex="0"
+                >
                   <i class="fab fa-github" aria-hidden="true"></i> Código
                 </a>
-                <a href="https://andresgomez-77.github.io/E-commerce/" target="_blank" rel="noopener noreferrer" class="project-link project-link--demo" aria-label="Ver demo en vivo" tabindex="0">
-                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                <a
+                  href="https://andresgomez-77.github.io/E-commerce/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link--demo"
+                  aria-label="Ver demo en vivo"
+                  tabindex="0"
+                >
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  Demo
                 </a>
               </div>
             </div>
           </article>
 
           <!-- Proyecto 4: Conversor -->
-          <article class="project-card reveal" aria-label="Proyecto Conversor de Moneda">
+          <article
+            class="project-card reveal"
+            aria-label="Proyecto Conversor de Moneda"
+          >
             <div class="project-card__img-wrapper">
-              <img src="assets/img/Conversor.png" alt="Captura del Conversor de Moneda" class="project-card__img" loading="lazy" />
+              <img
+                src="assets/img/Conversor.png"
+                alt="Captura del Conversor de Moneda"
+                class="project-card__img"
+                loading="lazy"
+              />
               <div class="project-card__overlay" aria-hidden="true"></div>
               <span class="project-card__badge">Challenge Alura</span>
             </div>
             <div class="project-card__content">
               <h3 class="project-card__title">Conversor de Moneda</h3>
               <p class="project-card__desc">
-                Programa en Java para convertir pesos colombianos a distintas divisas y también unidades de masa. Desarrollado en Eclipse IDE.
+                Programa en Java para convertir pesos colombianos a distintas
+                divisas y también unidades de masa. Desarrollado en Eclipse IDE.
               </p>
               <div class="project-card__tags">
                 <span class="project-tag">Java</span>
                 <span class="project-tag">Eclipse IDE</span>
               </div>
               <div class="project-card__links">
-                <a href="https://github.com/andresgomez-77/Conversor-de-Moneda" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub" tabindex="0">
+                <a
+                  href="https://github.com/andresgomez-77/Conversor-de-Moneda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="Ver código en GitHub"
+                  tabindex="0"
+                >
                   <i class="fab fa-github" aria-hidden="true"></i> Código
                 </a>
               </div>
@@ -426,16 +1066,26 @@
           </article>
 
           <!-- Proyecto 5: Hotel Alura -->
-          <article class="project-card reveal" aria-label="Proyecto Hotel Alura">
+          <article
+            class="project-card reveal"
+            aria-label="Proyecto Hotel Alura"
+          >
             <div class="project-card__img-wrapper">
-              <img src="assets/img/hotelAlura.png" alt="Captura del sistema Hotel Alura" class="project-card__img" loading="lazy" />
+              <img
+                src="assets/img/hotelAlura.png"
+                alt="Captura del sistema Hotel Alura"
+                class="project-card__img"
+                loading="lazy"
+              />
               <div class="project-card__overlay" aria-hidden="true"></div>
               <span class="project-card__badge">Challenge Alura</span>
             </div>
             <div class="project-card__content">
               <h3 class="project-card__title">Hotel Alura</h3>
               <p class="project-card__desc">
-                Sistema de reservas hoteleras en Java. Controla y administra el flujo de reservas y huéspedes de forma eficiente con una interfaz gráfica.
+                Sistema de reservas hoteleras en Java. Controla y administra el
+                flujo de reservas y huéspedes de forma eficiente con una
+                interfaz gráfica.
               </p>
               <div class="project-card__tags">
                 <span class="project-tag">Java</span>
@@ -443,7 +1093,14 @@
                 <span class="project-tag">Swing</span>
               </div>
               <div class="project-card__links">
-                <a href="https://github.com/andresgomez-77/hotel-alura" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub" tabindex="0">
+                <a
+                  href="https://github.com/andresgomez-77/hotel-alura"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="Ver código en GitHub"
+                  tabindex="0"
+                >
                   <i class="fab fa-github" aria-hidden="true"></i> Código
                 </a>
               </div>
@@ -451,47 +1108,80 @@
           </article>
 
           <!-- Proyecto 6: StarJeak -->
-          <article class="project-card reveal" aria-label="Proyecto StarJeak Streaming">
+          <article
+            class="project-card reveal"
+            aria-label="Proyecto StarJeak Streaming"
+          >
             <div class="project-card__img-wrapper">
-              <img src="assets/img/Sin titulo.png" alt="Captura de StarJeak Streaming" class="project-card__img" loading="lazy" />
+              <img
+                src="assets/img/Sin titulo.png"
+                alt="Captura de StarJeak Streaming"
+                class="project-card__img"
+                loading="lazy"
+              />
               <div class="project-card__overlay" aria-hidden="true"></div>
-              <span class="project-card__badge project-card__badge--personal">Personal</span>
+              <span class="project-card__badge project-card__badge--personal"
+                >Personal</span
+              >
             </div>
             <div class="project-card__content">
               <h3 class="project-card__title">StarJeak Streaming</h3>
               <p class="project-card__desc">
-                Plataforma de entretenimiento digital con secciones de streaming, música y juegos. Mi primer proyecto de diseño web completo con HTML y CSS.
+                Plataforma de entretenimiento digital con secciones de
+                streaming, música y juegos. Mi primer proyecto de diseño web
+                completo con HTML y CSS.
               </p>
               <div class="project-card__tags">
                 <span class="project-tag">HTML</span>
                 <span class="project-tag">CSS</span>
               </div>
               <div class="project-card__links">
-                <a href="https://github.com/andresgomez-77/Starjeak" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub" tabindex="0">
+                <a
+                  href="https://github.com/andresgomez-77/Starjeak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="Ver código en GitHub"
+                  tabindex="0"
+                >
                   <i class="fab fa-github" aria-hidden="true"></i> Código
                 </a>
-                <a href="https://andresgomez-77.github.io/Starjeak/" target="_blank" rel="noopener noreferrer" class="project-link project-link--demo" aria-label="Ver demo en vivo" tabindex="0">
-                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                <a
+                  href="https://andresgomez-77.github.io/Starjeak/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link--demo"
+                  aria-label="Ver demo en vivo"
+                  tabindex="0"
+                >
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  Demo
                 </a>
               </div>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
     <!-- ===== FORMACIÓN ===== -->
-    <section class="section education" id="formacion" aria-label="Formación académica">
+    <section
+      class="section education"
+      id="formacion"
+      aria-label="Formación académica"
+    >
       <div class="container">
         <div class="section__header reveal">
-          <span class="section__tag">04. Formación</span>
+          <span class="section__tag">05. Formación</span>
           <h2 class="section__title">Mi camino académico</h2>
         </div>
 
         <div class="timeline" role="list">
-
-          <div class="timeline__item reveal" role="listitem" aria-label="Técnico en Sistemas - SENA 2012">
+          <div
+            class="timeline__item reveal"
+            role="listitem"
+            aria-label="Técnico en Sistemas - SENA 2012"
+          >
             <div class="timeline__dot" aria-hidden="true"></div>
             <div class="timeline__content">
               <span class="timeline__date">Nov 2012</span>
@@ -499,11 +1189,18 @@
               <p class="timeline__institution">
                 <i class="fas fa-graduation-cap" aria-hidden="true"></i> SENA
               </p>
-              <p class="timeline__desc">Formación técnica en sistemas, base de mis conocimientos en tecnología e informática.</p>
+              <p class="timeline__desc">
+                Formación técnica en sistemas, base de mis conocimientos en
+                tecnología e informática.
+              </p>
             </div>
           </div>
 
-          <div class="timeline__item reveal" role="listitem" aria-label="Tecnólogo en Electrónica - UTS 2019">
+          <div
+            class="timeline__item reveal"
+            role="listitem"
+            aria-label="Tecnólogo en Electrónica - UTS 2019"
+          >
             <div class="timeline__dot" aria-hidden="true"></div>
             <div class="timeline__content">
               <span class="timeline__date">Mar 2019</span>
@@ -511,46 +1208,73 @@
               <p class="timeline__institution">
                 <i class="fas fa-graduation-cap" aria-hidden="true"></i> UTS
               </p>
-              <p class="timeline__desc">Conocimientos en circuitos electrónicos, programación de sistemas embebidos y diseño de hardware.</p>
+              <p class="timeline__desc">
+                Conocimientos en circuitos electrónicos, programación de
+                sistemas embebidos y diseño de hardware.
+              </p>
             </div>
           </div>
 
-          <div class="timeline__item reveal" role="listitem" aria-label="Ingeniería en Electrónica - UTS 2020">
+          <div
+            class="timeline__item reveal"
+            role="listitem"
+            aria-label="Ingeniería en Electrónica - UTS 2020"
+          >
             <div class="timeline__dot" aria-hidden="true"></div>
             <div class="timeline__content">
               <span class="timeline__date">Jun 2020</span>
               <h3 class="timeline__title">Ingeniería en Electrónica</h3>
               <p class="timeline__institution">
-                <i class="fas fa-graduation-cap" aria-hidden="true"></i> UTS — Universidad de Tecnología y Sociedad
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i> UTS —
+                Universidad de Tecnología y Sociedad
               </p>
-              <p class="timeline__desc">Título profesional. Especialización en Arduino, programación de PLC's y Matlab para ingeniería de sistemas.</p>
+              <p class="timeline__desc">
+                Título profesional. Especialización en Arduino, programación de
+                PLC's y Matlab para ingeniería de sistemas.
+              </p>
             </div>
           </div>
 
-          <div class="timeline__item reveal" role="listitem" aria-label="Desarrollo Web Front-End - Crehana 2022">
+          <div
+            class="timeline__item reveal"
+            role="listitem"
+            aria-label="Desarrollo Web Front-End - Crehana 2022"
+          >
             <div class="timeline__dot" aria-hidden="true"></div>
             <div class="timeline__content">
               <span class="timeline__date">Jun 2022</span>
-              <h3 class="timeline__title">Desarrollo Web Front-End: HTML y CSS</h3>
+              <h3 class="timeline__title">
+                Desarrollo Web Front-End: HTML y CSS
+              </h3>
               <p class="timeline__institution">
                 <i class="fas fa-laptop-code" aria-hidden="true"></i> Crehana
               </p>
-              <p class="timeline__desc">Mi primer paso formal en el desarrollo web, aprendiendo fundamentos de HTML5 y CSS3 desde cero.</p>
+              <p class="timeline__desc">
+                Mi primer paso formal en el desarrollo web, aprendiendo
+                fundamentos de HTML5 y CSS3 desde cero.
+              </p>
             </div>
           </div>
 
-          <div class="timeline__item timeline__item--active reveal" role="listitem" aria-label="Oracle ONE + Alura - En curso">
+          <div
+            class="timeline__item timeline__item--active reveal"
+            role="listitem"
+            aria-label="Oracle ONE + Alura - En curso"
+          >
             <div class="timeline__dot" aria-hidden="true"></div>
             <div class="timeline__content">
-              <span class="timeline__date timeline__date--active">En curso ✦</span>
+              <span class="timeline__date">Feb 2023</span>
               <h3 class="timeline__title">Programa Oracle ONE + Alura</h3>
               <p class="timeline__institution">
-                <i class="fas fa-laptop-code" aria-hidden="true"></i> Oracle + Alura Latam
+                <i class="fas fa-laptop-code" aria-hidden="true"></i> Oracle +
+                Alura Latam
               </p>
-              <p class="timeline__desc">Formación intensiva en programación, desarrollo front-end y back-end con enfoque práctico y proyectos reales.</p>
+              <p class="timeline__desc">
+                Formación intensiva en programación, desarrollo front-end y
+                back-end con enfoque práctico y proyectos reales.
+              </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -559,37 +1283,65 @@
     <section class="section hobbies" id="hobbies" aria-label="Pasatiempos">
       <div class="container">
         <div class="section__header reveal">
-          <span class="section__tag">05. Hobbies</span>
+          <span class="section__tag">06. Hobbies</span>
           <h2 class="section__title">Fuera del código</h2>
         </div>
 
         <div class="hobbies__grid" aria-label="Lista de pasatiempos">
-          <div class="hobby-card reveal" tabindex="0" aria-label="Música - Me gusta escuchar música">
+          <div
+            class="hobby-card reveal"
+            tabindex="0"
+            aria-label="Música - Me gusta escuchar música"
+          >
             <div class="hobby-card__icon" aria-hidden="true">🎧</div>
             <h3 class="hobby-card__title">Música</h3>
-            <p class="hobby-card__desc">Escuchar buenos temas en cualquier momento</p>
+            <p class="hobby-card__desc">
+              Escuchar buenos temas en cualquier momento
+            </p>
           </div>
-          <div class="hobby-card reveal" tabindex="0" aria-label="Videojuegos - Jugar videojuegos">
+          <div
+            class="hobby-card reveal"
+            tabindex="0"
+            aria-label="Videojuegos - Jugar videojuegos"
+          >
             <div class="hobby-card__icon" aria-hidden="true">🎮</div>
             <h3 class="hobby-card__title">Videojuegos</h3>
             <p class="hobby-card__desc">Aventuras épicas en mundos virtuales</p>
           </div>
-          <div class="hobby-card reveal" tabindex="0" aria-label="Fútbol - Jugar y ver fútbol">
+          <div
+            class="hobby-card reveal"
+            tabindex="0"
+            aria-label="Fútbol - Jugar y ver fútbol"
+          >
             <div class="hobby-card__icon" aria-hidden="true">⚽</div>
             <h3 class="hobby-card__title">Fútbol</h3>
             <p class="hobby-card__desc">El deporte que une a todo el mundo</p>
           </div>
-          <div class="hobby-card reveal" tabindex="0" aria-label="Tenis - Practicar tenis">
+          <div
+            class="hobby-card reveal"
+            tabindex="0"
+            aria-label="Tenis - Practicar tenis"
+          >
             <div class="hobby-card__icon" aria-hidden="true">🎾</div>
             <h3 class="hobby-card__title">Tenis</h3>
             <p class="hobby-card__desc">Deporte de precisión y estrategia</p>
           </div>
-          <div class="hobby-card reveal" tabindex="0" aria-label="Cocina - Cocinar y comer">
+          <div
+            class="hobby-card reveal"
+            tabindex="0"
+            aria-label="Cocina - Cocinar y comer"
+          >
             <div class="hobby-card__icon" aria-hidden="true">🍳</div>
             <h3 class="hobby-card__title">Cocinar</h3>
-            <p class="hobby-card__desc">Experimentar con sabores y recetas nuevas</p>
+            <p class="hobby-card__desc">
+              Experimentar con sabores y recetas nuevas
+            </p>
           </div>
-          <div class="hobby-card reveal" tabindex="0" aria-label="Playa y naturaleza - Pasear al aire libre">
+          <div
+            class="hobby-card reveal"
+            tabindex="0"
+            aria-label="Playa y naturaleza - Pasear al aire libre"
+          >
             <div class="hobby-card__icon" aria-hidden="true">🏖️</div>
             <h3 class="hobby-card__title">Naturaleza</h3>
             <p class="hobby-card__desc">Pasear y desconectar al aire libre</p>
@@ -599,10 +1351,14 @@
     </section>
 
     <!-- ===== CONTACTO ===== -->
-    <section class="section contact" id="contacto" aria-label="Sección de contacto">
+    <section
+      class="section contact"
+      id="contacto"
+      aria-label="Sección de contacto"
+    >
       <div class="container">
         <div class="section__header reveal">
-          <span class="section__tag">06. Contacto</span>
+          <span class="section__tag">07. Contacto</span>
           <h2 class="section__title">¡Hablemos!</h2>
         </div>
 
@@ -610,12 +1366,18 @@
           <!-- Info de contacto -->
           <div class="contact__info reveal">
             <p class="contact__intro">
-              ¿Tienes un proyecto en mente o quieres hablar de una oportunidad laboral?
-              Estoy disponible y con muchas ganas de sumar. <strong>Escríbeme</strong> 😊
+              ¿Tienes un proyecto en mente o quieres hablar de una oportunidad
+              laboral? Estoy disponible y con muchas ganas de sumar.
+              <strong>Escríbeme</strong> 😊
             </p>
 
             <div class="contact__links">
-              <a href="mailto:tu-email@gmail.com" class="contact__link" aria-label="Enviar email" tabindex="0">
+              <a
+                href="mailto:tu-email@gmail.com"
+                class="contact__link"
+                aria-label="Enviar email"
+                tabindex="0"
+              >
                 <div class="contact__link-icon" aria-hidden="true">
                   <i class="fas fa-envelope"></i>
                 </div>
@@ -624,7 +1386,14 @@
                   <span class="contact__link-value">tu-email@gmail.com</span>
                 </div>
               </a>
-              <a href="https://github.com/andresgomez-77" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Visitar GitHub" tabindex="0">
+              <a
+                href="https://github.com/andresgomez-77"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact__link"
+                aria-label="Visitar GitHub"
+                tabindex="0"
+              >
                 <div class="contact__link-icon" aria-hidden="true">
                   <i class="fab fa-github"></i>
                 </div>
@@ -633,7 +1402,14 @@
                   <span class="contact__link-value">andresgomez-77</span>
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/andr%C3%A9s-g%C3%B3mez-b1b7b9226/" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Visitar LinkedIn" tabindex="0">
+              <a
+                href="https://www.linkedin.com/in/andr%C3%A9s-g%C3%B3mez-b1b7b9226/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact__link"
+                aria-label="Visitar LinkedIn"
+                tabindex="0"
+              >
                 <div class="contact__link-icon" aria-hidden="true">
                   <i class="fab fa-linkedin-in"></i>
                 </div>
@@ -646,7 +1422,13 @@
           </div>
 
           <!-- Formulario -->
-          <form class="contact__form reveal" id="contact-form" name="contact" novalidate aria-label="Formulario de contacto">
+          <form
+            class="contact__form reveal"
+            id="contact-form"
+            name="contact"
+            novalidate
+            aria-label="Formulario de contacto"
+          >
             <div class="form-group" id="group-name">
               <label class="form-label" for="nombre">Nombre</label>
               <input
@@ -659,7 +1441,12 @@
                 aria-required="true"
                 aria-describedby="error-nombre"
               />
-              <span class="form-error" id="error-nombre" role="alert" aria-live="polite"></span>
+              <span
+                class="form-error"
+                id="error-nombre"
+                role="alert"
+                aria-live="polite"
+              ></span>
             </div>
 
             <div class="form-group" id="group-email">
@@ -674,7 +1461,12 @@
                 aria-required="true"
                 aria-describedby="error-email"
               />
-              <span class="form-error" id="error-email" role="alert" aria-live="polite"></span>
+              <span
+                class="form-error"
+                id="error-email"
+                role="alert"
+                aria-live="polite"
+              ></span>
             </div>
 
             <div class="form-group" id="group-asunto">
@@ -688,7 +1480,12 @@
                 aria-required="true"
                 aria-describedby="error-asunto"
               />
-              <span class="form-error" id="error-asunto" role="alert" aria-live="polite"></span>
+              <span
+                class="form-error"
+                id="error-asunto"
+                role="alert"
+                aria-live="polite"
+              ></span>
             </div>
 
             <div class="form-group" id="group-mensaje">
@@ -703,17 +1500,37 @@
                 aria-describedby="error-mensaje counter-mensaje"
               ></textarea>
               <div class="form-group__footer">
-                <span class="form-error" id="error-mensaje" role="alert" aria-live="polite"></span>
-                <span class="form-counter" id="counter-mensaje" aria-live="polite">300 caracteres restantes</span>
+                <span
+                  class="form-error"
+                  id="error-mensaje"
+                  role="alert"
+                  aria-live="polite"
+                ></span>
+                <span
+                  class="form-counter"
+                  id="counter-mensaje"
+                  aria-live="polite"
+                  >300 caracteres restantes</span
+                >
               </div>
             </div>
 
-            <button type="submit" class="btn btn--primary btn--full" id="btn-submit" aria-label="Enviar mensaje">
+            <button
+              type="submit"
+              class="btn btn--primary btn--full"
+              id="btn-submit"
+              aria-label="Enviar mensaje"
+            >
               <span class="btn-text">Enviar mensaje</span>
               <i class="fas fa-paper-plane" aria-hidden="true"></i>
             </button>
 
-            <p class="form-success" id="form-success" role="status" aria-live="polite">
+            <p
+              class="form-success"
+              id="form-success"
+              role="status"
+              aria-live="polite"
+            >
               <i class="fas fa-check-circle" aria-hidden="true"></i>
               ¡Mensaje enviado con éxito! Te responderé pronto 🚀
             </p>
@@ -731,13 +1548,28 @@
             <span class="logo-bracket">/&gt;</span>
           </div>
           <p class="footer__text">
-            Diseñado y desarrollado con 💚 por <strong>Andrés Gómez</strong> · 2024
+            Diseñado y desarrollado con 💚 por <strong>Andrés Gómez</strong> ·
+            2024
           </p>
           <div class="footer__social" aria-label="Redes sociales">
-            <a href="https://github.com/andresgomez-77" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub" tabindex="0">
+            <a
+              href="https://github.com/andresgomez-77"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="GitHub"
+              tabindex="0"
+            >
               <i class="fab fa-github" aria-hidden="true"></i>
             </a>
-            <a href="https://www.linkedin.com/in/andr%C3%A9s-g%C3%B3mez-b1b7b9226/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" tabindex="0">
+            <a
+              href="https://www.linkedin.com/in/andr%C3%A9s-g%C3%B3mez-b1b7b9226/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="LinkedIn"
+              tabindex="0"
+            >
               <i class="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
           </div>
@@ -746,7 +1578,12 @@
     </footer>
 
     <!-- Botón volver arriba -->
-    <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio" tabindex="0">
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      aria-label="Volver al inicio"
+      tabindex="0"
+    >
       <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 

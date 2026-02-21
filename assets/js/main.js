@@ -32,7 +32,9 @@ document.addEventListener("mousemove", handleMouseMove);
 animateFollower();
 
 // Efecto en links y botones
-const interactiveElements = document.querySelectorAll("a, button, .skill-tag, .hobby-card, .social-icon");
+const interactiveElements = document.querySelectorAll(
+  "a, button, .skill-tag, .hobby-card, .social-icon",
+);
 
 interactiveElements.forEach((el) => {
   el.addEventListener("mouseenter", () => {
@@ -44,7 +46,6 @@ interactiveElements.forEach((el) => {
     cursorFollower.classList.remove("active");
   });
 });
-
 
 // ===== NAVBAR: scroll + hamburger =====
 const navbar = document.getElementById("navbar");
@@ -101,7 +102,6 @@ navLinks.forEach((link) => {
   });
 });
 
-
 // ===== TYPEWRITER EFFECT =====
 const typewriterEl = document.getElementById("typewriter");
 
@@ -151,7 +151,6 @@ const typeWriter = () => {
 // Iniciar el efecto
 typeWriter();
 
-
 // ===== REVEAL ON SCROLL (Intersection Observer) =====
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -181,12 +180,14 @@ const handleReveal = (entries) => {
   });
 };
 
-const revealObserver = new IntersectionObserver(handleReveal, revealObserverOptions);
+const revealObserver = new IntersectionObserver(
+  handleReveal,
+  revealObserverOptions,
+);
 
 revealElements.forEach((el) => {
   revealObserver.observe(el);
 });
-
 
 // ===== BACK TO TOP =====
 const backToTopBtn = document.getElementById("back-to-top");
@@ -204,7 +205,6 @@ const handleBackToTopKeyDown = (e) => {
 
 backToTopBtn.addEventListener("click", handleBackToTopClick);
 backToTopBtn.addEventListener("keydown", handleBackToTopKeyDown);
-
 
 // ===== FORMULARIO DE CONTACTO =====
 const contactForm = document.getElementById("contact-form");
@@ -235,22 +235,26 @@ mensajeInput.addEventListener("input", handleMensajeInput);
 const validators = {
   nombre: (value) => {
     if (!value.trim()) return "El nombre es obligatorio.";
-    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) return "Solo se permiten letras y acentos.";
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value))
+      return "Solo se permiten letras y acentos.";
     return "";
   },
   email: (value) => {
     if (!value.trim()) return "El correo es obligatorio.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return "Ingresa un correo válido.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+      return "Ingresa un correo válido.";
     return "";
   },
   asunto: (value) => {
     if (!value.trim()) return "El asunto es obligatorio.";
-    if (value.trim().length < 3) return "El asunto debe tener al menos 3 caracteres.";
+    if (value.trim().length < 3)
+      return "El asunto debe tener al menos 3 caracteres.";
     return "";
   },
   mensaje: (value) => {
     if (!value.trim()) return "El mensaje es obligatorio.";
-    if (value.trim().length < 10) return "El mensaje debe tener al menos 10 caracteres.";
+    if (value.trim().length < 10)
+      return "El mensaje debe tener al menos 10 caracteres.";
     if (value.length > MAX_CHARS) return `Máximo ${MAX_CHARS} caracteres.`;
     return "";
   },
@@ -339,7 +343,6 @@ const handleFormSubmit = (e) => {
 
 contactForm.addEventListener("submit", handleFormSubmit);
 
-
 // ===== CERRAR MENÚ CON ESCAPE =====
 const handleKeyDown = (e) => {
   if (e.key === "Escape" && navMenu.classList.contains("open")) {
@@ -352,7 +355,6 @@ const handleKeyDown = (e) => {
 };
 
 document.addEventListener("keydown", handleKeyDown);
-
 
 // ===== LINK ACTIVO EN NAVBAR AL HACER SCROLL =====
 const sections = document.querySelectorAll("section[id]");
@@ -382,3 +384,96 @@ window.addEventListener("scroll", handleActiveLink);
 // Inicializar el estado del scroll al cargar
 handleScroll();
 handleActiveLink();
+
+// ===== EFECTO DUNA AZUL INTERACTIVO (OPTIMIZADO) =====
+const heroBg = document.querySelector(".hero__bg");
+const isMobileDevice = window.matchMedia("(max-width: 768px)").matches;
+let duneX = 50;
+let duneY = 50;
+let targetX = 50;
+let targetY = 50;
+let isHeroVisible = false;
+let duneAnimationId = null;
+let lastMouseMoveTime = 0;
+const MOUSEMOVE_THROTTLE = 16; // ~60fps
+
+// Detectar si estamos en un dispositivo móvil o táctil
+const isTouchDevice = () => {
+  return (
+    (navigator.maxTouchPoints || navigator.msMaxTouchPoints) > 2 ||
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    )
+  );
+};
+
+// Detener animación si estamos en móvil
+if (isMobileDevice || isTouchDevice()) {
+  console.log("🚀 Duna interactiva desactivada en dispositivo móvil");
+} else {
+  // Throttle del mousemove para mejorar rendimiento
+  const handleDuneMouseMove = (e) => {
+    const now = Date.now();
+    if (now - lastMouseMoveTime < MOUSEMOVE_THROTTLE) return;
+    lastMouseMoveTime = now;
+
+    // Calcular posición del mouse como porcentaje
+    targetX = (e.clientX / window.innerWidth) * 100;
+    targetY = (e.clientY / window.innerHeight) * 100;
+  };
+
+  const animateDuneGradient = () => {
+    // Solo animar si el hero está visible en viewport
+    if (!isHeroVisible) {
+      duneAnimationId = requestAnimationFrame(animateDuneGradient);
+      return;
+    }
+
+    // Suavizar movimiento (easing)
+    duneX += (targetX - duneX) * 0.02;
+    duneY += (targetY - duneY) * 0.02;
+
+    if (heroBg) {
+      heroBg.style.backgroundImage = `
+        radial-gradient(ellipse 800px 300px at ${duneX * 0.8}% ${
+          duneY * 0.6
+        }%, rgba(46, 43, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(ellipse 900px 400px at ${100 - duneX * 0.7}% ${
+          100 - duneY * 0.5
+        }%, rgba(46, 43, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 700px 350px at ${duneX}% ${duneY}%, rgba(46, 43, 255, 0.08) 0%, transparent 60%)
+      `;
+    }
+
+    duneAnimationId = requestAnimationFrame(animateDuneGradient);
+  };
+
+  // Intersection Observer para activar/desactivar duna cuando entra en viewport
+  const duneObserverOptions = {
+    threshold: 0.1,
+  };
+
+  const handleDuneIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        isHeroVisible = true;
+      } else {
+        isHeroVisible = false;
+      }
+    });
+  };
+
+  const duneObserver = new IntersectionObserver(
+    handleDuneIntersection,
+    duneObserverOptions,
+  );
+
+  if (heroBg && heroBg.parentElement) {
+    duneObserver.observe(heroBg.parentElement);
+  }
+
+  // Iniciar animación solo en desktop/no móvil
+  document.addEventListener("mousemove", handleDuneMouseMove);
+  animateDuneGradient();
+  console.log("✨ Duna interactiva optimizada activada");
+}
