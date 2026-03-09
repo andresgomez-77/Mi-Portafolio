@@ -3,21 +3,17 @@
  * Features dynamic project filtering and animated transitions.
  */
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Box, Container, Typography, Chip } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { alpha } from "@mui/material/styles";
 import { tokens } from "../../theme/theme";
-import { projects } from "../../data/portfolioData";
+import { projectsFallback } from "../../data/portfolioData";
 import SectionHeader from "../ui/SectionHeader";
 import ProjectCard from "../ui/ProjectCard";
 import useInView from "../../hooks/useInView";
-
-/** Extract unique project tags for filter buttons */
-const ALL_TAGS = [
-  "Todos",
-  ...Array.from(new Set(projects.flatMap((p) => p.tags))),
-];
+import { projectsApi } from "../../services/api";
+import type { Project } from "../../types/index";
 
 /**
  * Projects section component.
@@ -26,12 +22,25 @@ const ALL_TAGS = [
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("Todos");
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.05 });
-
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+  /** Extract unique project tags for filter buttons */
+  const ALL_TAGS = [
+    "Todos",
+    ...Array.from(new Set(projects.flatMap((p) => p.tags))),
+  ];
+  useEffect(() => {
+    projectsApi
+      .getAll()
+      .then((data) => setProjects(data))
+      .catch(() => setProjects(projectsFallback))
+      .finally(() => setLoading(false));
+  }, []);
   /** Compute filtered projects based on active tag selection */
   const filteredProjects = useMemo(() => {
     if (activeFilter === "Todos") return projects;
     return projects.filter((p) => p.tags.includes(activeFilter));
-  }, [activeFilter]);
+  }, [activeFilter, projects]);
 
   return (
     <Box
@@ -166,7 +175,7 @@ const ProjectsSection = () => {
                 >
                   {filteredProjects.map((project, idx) => (
                     <ProjectCard
-                      key={project.id}
+                      key={project._id}
                       project={project}
                       index={idx}
                       inView={inView}

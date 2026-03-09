@@ -3,29 +3,26 @@
  * Displays competencies grouped by technology domain with skill level indicators.
  */
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Box, Container, Tabs, Tab, Typography } from "@mui/material";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { alpha } from "@mui/material/styles";
 import { tokens } from "../../theme/theme";
-import {
-  skills,
-  skillCategories,
-  getSkillsByCategory,
-} from "../../data/portfolioData";
-import type { SkillCategory } from "../../data/portfolioData";
 import SectionHeader from "../ui/SectionHeader";
 import SkillBar from "../ui/SkillBar";
 import useInView from "../../hooks/useInView";
+import type { Skill } from "../../types";
+import { skillsApi } from "../../services/api";
+import { skillsFallback } from "../../data/portfolioData";
 
 /** Emoji icons for skill category tab labels */
-const CATEGORY_ICONS: Record<SkillCategory, string> = {
-  "Frontend / Backend": "⚡",
-  Ingeniería: "🔧",
-  "Habilidades Técnicas": "💻",
-  "DevOps y Bases de Datos": "⚙️",
-  Idiomas: "🌍",
-};
+// const CATEGORY_ICONS: Record<SkillCategory, string> = {
+//   "Frontend / Backend": "⚡",
+//   Ingeniería: "🔧",
+//   "Habilidades Técnicas": "💻",
+//   "DevOps y Bases de Datos": "⚙️",
+//   Idiomas: "🌍",
+// };
 
 /** Animation variants for section entrance */
 const fadeUpVariants: Variants = {
@@ -58,14 +55,29 @@ const panelVariants: Variants = {
  */
 const SkillsSection = () => {
   /** Track which skill category tab is currently active */
-  const [activeTab, setActiveTab] = useState<SkillCategory>(skillCategories[0]);
-
+  const [activeTab, setActiveTab] = useState<string>("");
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [loading, setLoading] = useState(true);
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.05 });
-
+  useEffect(() => {
+    skillsApi
+      .getAll()
+      .then((data) => {
+        setSkills(data);
+        if (data.length > 0) {
+          setActiveTab(data[0].category); // ← setea el tab con los datos frescos
+        }
+      })
+      .catch(() => {
+        setSkills(skillsFallback);
+        setActiveTab(skillsFallback[0].category); // ← también en el fallback
+      })
+      .finally(() => setLoading(false));
+  }, []);
   /** Memoize category skills to avoid recalculation on other state changes */
-  const currentSkills = useMemo(
-    () => getSkillsByCategory(activeTab),
-    [activeTab],
+  const categories = useMemo(
+    () => [...new Set(skills.map((s) => s.category))],
+    [skills],
   );
 
   /** Calculate total and average skill levels across all categories */
@@ -75,13 +87,13 @@ const SkillsSection = () => {
     [totalSkills],
   );
 
-  const handleTabChange = (
-    _: React.SyntheticEvent,
-    newValue: SkillCategory,
-  ) => {
+  const handleTabChange = (_: React.SyntheticEvent, newValue: string) => {
     setActiveTab(newValue);
   };
-
+  const currentSkills = useMemo(
+    () => skills.filter((s) => s.category === activeTab),
+    [activeTab, skills],
+  );
   return (
     <Box
       component="section"
@@ -231,7 +243,7 @@ const SkillsSection = () => {
                     color: tokens.color.amber[500],
                   }}
                 >
-                  {skillCategories.length}
+                  {categories.length}
                 </Typography>
                 <Typography
                   sx={{
@@ -262,7 +274,7 @@ const SkillsSection = () => {
               aria-label="Categorías de habilidades"
               sx={{ mb: 4 }}
             >
-              {skillCategories.map((category) => (
+              {categories.map((category) => (
                 <Tab
                   key={category}
                   value={category} // value en string, no en índice
@@ -274,7 +286,6 @@ const SkillsSection = () => {
                         gap: 0.8,
                       }}
                     >
-                      <span aria-hidden="true">{CATEGORY_ICONS[category]}</span>
                       <span>{category}</span>
                     </Box>
                   }

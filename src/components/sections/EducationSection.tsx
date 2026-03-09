@@ -10,10 +10,12 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import { motion, type Variants } from "framer-motion";
 import { alpha } from "@mui/material/styles";
 import { tokens } from "../../theme/theme";
-import { education } from "../../data/portfolioData";
-import type { Education } from "../../data/portfolioData";
 import SectionHeader from "../ui/SectionHeader";
 import useInView from "../../hooks/useInView";
+import type { Education } from "../../types";
+import { useEffect, useState } from "react";
+import { educationApi } from "../../services/api";
+import { educationFallback } from "../../data/portfolioData";
 
 // ── Logos de instituciones ────────────────────────────────────────────────────
 // Mapeamos el nombre de institución a su logo
@@ -49,7 +51,16 @@ const itemVariants = (isLeft: boolean): Variants => ({
 // ── COMPONENTE PRINCIPAL ──────────────────────────────────────────────────────
 const EducationSection = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.05 });
+  const [education, setEducation] = useState<Education[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    educationApi
+      .getAll()
+      .then((data) => setEducation(data))
+      .catch(() => setEducation(educationFallback))
+      .finally(() => setLoading(false));
+  }, []);
   return (
     <Box
       component="section"
@@ -119,7 +130,7 @@ const EducationSection = () => {
               const isLeft = idx % 2 === 0;
               return (
                 <EducationItem
-                  key={item.id}
+                  key={item._id}
                   item={item}
                   index={idx}
                   isLeft={isLeft}
@@ -165,7 +176,7 @@ const EducationItem = ({ item, index, isLeft, inView }: EducationItemProps) => {
         <Box
           sx={{
             display: { xs: "none", md: "flex" },
-            justifyContent: "flex-end",
+            justifyContent: "flex-end", pr: 2
           }}
         >
           {isLeft && (
@@ -264,7 +275,7 @@ const EducationItem = ({ item, index, isLeft, inView }: EducationItemProps) => {
         {/* ── LADO DERECHO ──────────────────────────────────────────────── */}
         <Box>
           {/* Mobile: siempre muestra la card aquí */}
-          <Box sx={{ display: { xs: "block", md: "none" } }}>
+          <Box sx={{ display: { xs: "block", md: "none" }}}>
             <EducationCard
               item={item}
               logoSrc={logoSrc}
@@ -274,7 +285,7 @@ const EducationItem = ({ item, index, isLeft, inView }: EducationItemProps) => {
           </Box>
 
           {/* Desktop: solo si es item derecho (isLeft = false) */}
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <Box sx={{ display: { xs: "none", md: "block" }, pl: 2 }}>
             {!isLeft && (
               <EducationCard
                 item={item}
@@ -315,7 +326,7 @@ const EducationCard = ({ item, logoSrc }: EducationCardProps) => (
       transition: `all ${tokens.transition.normal}`,
       maxWidth: { md: "420px" },
       // Cards izquierdas se alinean a la derecha en desktop
-      ml: "auto",
+      width: "100%",
       "&:hover": {
         borderColor: alpha(tokens.color.amber[500], 0.35),
         boxShadow: tokens.shadow.glow,

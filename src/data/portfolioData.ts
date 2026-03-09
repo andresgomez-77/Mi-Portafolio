@@ -1,60 +1,11 @@
-import type { SvgIconProps } from "@mui/material/SvgIcon";
-
-// Los tipos definen la "forma" de tus datos. Si pones algo incorrecto, TypeScript te avisa.
-export interface Skill {
-  name: string;
-  level: number; // 0 - 100
-  category: SkillCategory;
-  icon?: React.ComponentType<SvgIconProps>; // opcional, viene de skillIcons.ts
-}
-export type SkillCategory =
-  | "Frontend / Backend"
-  | "Ingeniería"
-  | "Habilidades Técnicas"
-  | "DevOps y Bases de Datos"
-  | "Idiomas";
-
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  githubUrl: string;
-  demoUrl?: string; // el ? significa "es opcional, puede no existir"
-  featured?: boolean;
-  badge: string;
-  badgeType?: "default" | "featured" | "personal";
-}
-
-export interface Experience {
-  id: number;
-  role: string;
-  company: string;
-  date: string;
-  current?: boolean;
-  responsibilities: string[]; // array = lista de strings
-}
-
-export interface Education {
-  id: number;
-  title: string;
-  institution: string;
-  date: string;
-  description: string;
-  current?: boolean;
-  type: "academic" | "course"; // para saber qué ícono mostrar
-}
-export interface Hobby {
-  icon: string;
-  title: string;
-  description: string;
-}
-export interface SocialLink {
-  name: string;
-  url: string;
-  icon: "github" | "linkedin" | "email";
-}
+import type {
+  Project,
+  Experience,
+  Education,
+  Skill,
+  Hobby,
+  SocialLink,
+} from "../types/index";
 
 // ── 2. INFORMACIÓN PERSONAL ───────────────────────────────────────────────────
 export const personalInfo = {
@@ -87,9 +38,9 @@ export const personalInfo = {
 };
 
 // ── 3. EXPERIENCIA PROFESIONAL ────────────────────────────────────────────────
-export const experiences: Experience[] = [
+export const experiencesFallback: Experience[] = [
   {
-    id: 1,
+    _id: "1",
     role: "Coordinador de Desarrollo de Proyectos",
     company: "ActionTracker Solutions SL",
     date: "Junio 2023 - Actual",
@@ -103,50 +54,183 @@ export const experiences: Experience[] = [
       "Coordinación de despliegues con Docker, Kubernetes y Rancher, asegurando estabilidad de los entornos productivos.",
       "Soporte y mantenimiento de bases de datos en aplicaciones productivas, colaborando con equipos de desarrollo y operaciones.",
     ],
+    order: 1,
   },
 ];
 
 // ── 4. SKILLS ─────────────────────────────────────────────────────────────────
 // Los skills están agrupados por categoría.
 // El componente SkillsSection los va a filtrar por category para mostrarlos.
-export const skills: Skill[] = [
-  { name: "HTML5", level: 100, category: "Frontend / Backend" },
-  { name: "CSS3", level: 100, category: "Frontend / Backend" },
-  { name: "JavaScript", level: 85, category: "Frontend / Backend" },
-  { name: "React", level: 80, category: "Frontend / Backend" },
-  { name: "TypeScript", level: 80, category: "Frontend / Backend" },
-  { name: "Node.js", level: 65, category: "Frontend / Backend" },
-  { name: "Java / Spring Boot", level: 30, category: "Frontend / Backend" },
+export const skillsFallback: Skill[] = [
+  {
+    _id: "1",
+    name: "HTML5",
+    level: 100,
+    category: "Frontend / Backend",
+    order: 1,
+  },
+  {
+    _id: "2",
+    name: "CSS3",
+    level: 100,
+    category: "Frontend / Backend",
+    order: 2,
+  },
+  {
+    _id: "3",
+    name: "JavaScript",
+    level: 85,
+    category: "Frontend / Backend",
+    order: 3,
+  },
+  {
+    _id: "4",
+    name: "React",
+    level: 80,
+    category: "Frontend / Backend",
+    order: 4,
+  },
+  {
+    _id: "5",
+    name: "TypeScript",
+    level: 80,
+    category: "Frontend / Backend",
+    order: 5,
+  },
+  {
+    _id: "6",
+    name: "Node.js",
+    level: 65,
+    category: "Frontend / Backend",
+    order: 6,
+  },
+  {
+    _id: "7",
+    name: "Java / Spring Boot",
+    level: 30,
+    category: "Frontend / Backend",
+    order: 7,
+  },
 
-  { name: "C++", level: 70, category: "Ingeniería" },
-  { name: "Arduino", level: 75, category: "Ingeniería" },
-  { name: "Matlab", level: 60, category: "Ingeniería" },
-  { name: "Java", level: 50, category: "Ingeniería" },
+  { _id: "8", name: "C++", level: 70, category: "Ingeniería", order: 8 },
+  { _id: "9", name: "Arduino", level: 75, category: "Ingeniería", order: 9 },
+  { _id: "10", name: "Matlab", level: 60, category: "Ingeniería", order: 10 },
+  { _id: "11", name: "Java", level: 50, category: "Ingeniería", order: 11 },
 
-  { name: "Bootstrap", level: 85, category: "Habilidades Técnicas" },
-  { name: "APIs REST", level: 85, category: "Habilidades Técnicas" },
-  { name: "PostgreSQL", level: 85, category: "Habilidades Técnicas" },
-  { name: "MongoDB", level: 75, category: "Habilidades Técnicas" },
-  { name: "Docker", level: 80, category: "Habilidades Técnicas" },
-  { name: "Git", level: 95, category: "Habilidades Técnicas" },
-  { name: "SQL Optimization", level: 90, category: "Habilidades Técnicas" },
+  {
+    _id: "12",
+    name: "Bootstrap",
+    level: 85,
+    category: "Habilidades Técnicas",
+    order: 12,
+  },
+  {
+    _id: "13",
+    name: "APIs REST",
+    level: 85,
+    category: "Habilidades Técnicas",
+    order: 13,
+  },
+  {
+    _id: "14",
+    name: "PostgreSQL",
+    level: 85,
+    category: "Habilidades Técnicas",
+    order: 14,
+  },
+  {
+    _id: "15",
+    name: "MongoDB",
+    level: 75,
+    category: "Habilidades Técnicas",
+    order: 15,
+  },
+  {
+    _id: "16",
+    name: "Docker",
+    level: 80,
+    category: "Habilidades Técnicas",
+    order: 16,
+  },
+  {
+    _id: "17",
+    name: "Git",
+    level: 95,
+    category: "Habilidades Técnicas",
+    order: 17,
+  },
+  {
+    _id: "18",
+    name: "SQL Optimization",
+    level: 90,
+    category: "Habilidades Técnicas",
+    order: 18,
+  },
 
-  { name: "PostGIS", level: 90, category: "DevOps y Bases de Datos" },
-  { name: "MySQL", level: 90, category: "DevOps y Bases de Datos" },
-  { name: "Pentaho", level: 70, category: "DevOps y Bases de Datos" },
-  { name: "Linux", level: 75, category: "DevOps y Bases de Datos" },
-  { name: "Kubernetes", level: 70, category: "DevOps y Bases de Datos" },
-  { name: "Rancher", level: 85, category: "DevOps y Bases de Datos" },
-  { name: "Jenkins", level: 75, category: "DevOps y Bases de Datos" },
-  { name: "AWS", level: 60, category: "DevOps y Bases de Datos" },
+  {
+    _id: "19",
+    name: "PostGIS",
+    level: 90,
+    category: "DevOps y Bases de Datos",
+    order: 19,
+  },
+  {
+    _id: "20",
+    name: "MySQL",
+    level: 90,
+    category: "DevOps y Bases de Datos",
+    order: 20,
+  },
+  {
+    _id: "21",
+    name: "Pentaho",
+    level: 70,
+    category: "DevOps y Bases de Datos",
+    order: 21,
+  },
+  {
+    _id: "22",
+    name: "Linux",
+    level: 75,
+    category: "DevOps y Bases de Datos",
+    order: 22,
+  },
+  {
+    _id: "23",
+    name: "Kubernetes",
+    level: 70,
+    category: "DevOps y Bases de Datos",
+    order: 23,
+  },
+  {
+    _id: "24",
+    name: "Rancher",
+    level: 85,
+    category: "DevOps y Bases de Datos",
+    order: 24,
+  },
+  {
+    _id: "25",
+    name: "Jenkins",
+    level: 75,
+    category: "DevOps y Bases de Datos",
+    order: 25,
+  },
+  {
+    _id: "26",
+    name: "AWS",
+    level: 60,
+    category: "DevOps y Bases de Datos",
+    order: 26,
+  },
 
-  { name: "Español", level: 100, category: "Idiomas" },
-  { name: "Inglés", level: 65, category: "Idiomas" },
+  { _id: "27", name: "Español", level: 100, category: "Idiomas", order: 27 },
+  { _id: "28", name: "Inglés", level: 65, category: "Idiomas", order: 28 },
 ];
 // ── 5. PROYECTOS ──────────────────────────────────────────────────────────────
-export const projects: Project[] = [
+export const projectsFallback: Project[] = [
   {
-    id: 1,
+    _id: "1",
     title: "Encriptador de Texto",
     description:
       "Aplicación web que encripta y desencripta mensajes usando lógica de sustitución de caracteres. Primer challenge de Alura.",
@@ -156,9 +240,10 @@ export const projects: Project[] = [
     demoUrl: "https://andresgomez-77.github.io/challenge-encriptador-oracle/",
     badge: "Challenge Alura",
     badgeType: "default",
+    order: 1,
   },
   {
-    id: 2,
+    _id: "2",
     title: "Juego del Ahorcado",
     description:
       "Juego interactivo con temática siniestra, música de suspenso y controles de audio. Diseñado para ser inmersivo.",
@@ -168,9 +253,10 @@ export const projects: Project[] = [
     demoUrl: "https://andresgomez-77.github.io/Juego-del-Ahorcado/",
     badge: "Challenge Alura",
     badgeType: "default",
+    order: 2,
   },
   {
-    id: 3,
+    _id: "3",
     title: "Tienda Virtual",
     description:
       "E-commerce de materiales de construcción. En proceso de actualización a stack moderno con autenticación y panel admin.",
@@ -181,9 +267,10 @@ export const projects: Project[] = [
     featured: true,
     badge: "Destacado",
     badgeType: "featured",
+    order: 3,
   },
   {
-    id: 4,
+    _id: "4",
     title: "Conversor de Moneda",
     description:
       "Convierte pesos colombianos a distintas divisas y unidades de masa. Desarrollado en Java con Eclipse IDE.",
@@ -192,9 +279,10 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/andresgomez-77/Conversor-de-Moneda",
     badge: "Challenge Alura",
     badgeType: "default",
+    order: 4,
   },
   {
-    id: 5,
+    _id: "5",
     title: "Hotel Alura",
     description:
       "Sistema de reservas hoteleras en Java. Controla el flujo de reservas y huéspedes con interfaz gráfica Swing.",
@@ -203,9 +291,10 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/andresgomez-77/hotel-alura",
     badge: "Challenge Alura",
     badgeType: "default",
+    order: 5,
   },
   {
-    id: 6,
+    _id: "6",
     title: "StarJeak Streaming",
     description:
       "Plataforma de entretenimiento con secciones de streaming, música y juegos. Mi primer proyecto web completo.",
@@ -215,48 +304,53 @@ export const projects: Project[] = [
     demoUrl: "https://andresgomez-77.github.io/Starjeak/",
     badge: "Personal",
     badgeType: "personal",
+    order: 6,
   },
 ];
 
 // ── 6. FORMACIÓN ──────────────────────────────────────────────────────────────
-export const education: Education[] = [
+export const educationFallback: Education[] = [
   {
-    id: 1,
+    _id: "1",
     title: "Técnico en Sistemas",
     institution: "SENA",
     date: "Nov 2012",
     description: "Base en tecnología e informática.",
     type: "academic",
+    order: 1,
   },
   {
-    id: 2,
+    _id: "2",
     title: "Tecnólogo en Electrónica",
     institution: "UTS",
     date: "Mar 2019",
     description:
       "Circuitos electrónicos, sistemas embebidos y diseño de hardware.",
     type: "academic",
+    order: 2,
   },
   {
-    id: 3,
+    _id: "3",
     title: "Ingeniería en Electrónica",
     institution: "UTS — Universidad de Tecnología y Sociedad",
     date: "Jun 2020",
     description:
       "Título profesional. Arduino, PLCs y Matlab para ingeniería de sistemas.",
     type: "academic",
+    order: 3,
   },
   {
-    id: 4,
+    _id: "4",
     title: "Desarrollo Web Front-End: HTML y CSS",
     institution: "Crehana",
     date: "Jun 2022",
     description:
       "Primer paso formal en desarrollo web, fundamentos de HTML5 y CSS3.",
     type: "course",
+    order: 4,
   },
   {
-    id: 5,
+    _id: "5",
     title: "Programa Oracle ONE + Alura",
     institution: "Oracle + Alura Latam",
     date: "Feb 2023",
@@ -264,6 +358,7 @@ export const education: Education[] = [
       "Formación intensiva en programación, desarrollo front-end y back-end con proyectos reales.",
     current: false,
     type: "course",
+    order: 5,
   },
 ];
 
@@ -311,19 +406,3 @@ export const socialLinks: SocialLink[] = [
   },
   { name: "Email", url: "mailto:andresgomez-77@hotmail.com", icon: "email" },
 ];
-
-// ── 9. CATEGORÍAS DE SKILLS (para los tabs/filtros del componente) ────────────
-// Esto lo usará el componente SkillsSection para generar las pestañas automáticamente.
-export const skillCategories: SkillCategory[] = [
-  "Frontend / Backend",
-  "Ingeniería",
-  "Habilidades Técnicas",
-  "DevOps y Bases de Datos",
-  "Idiomas",
-];
-
-// ── 10. HELPER: filtrar skills por categoría ──────────────────────────────────
-// Una función helper que los componentes pueden usar para no repetir lógica.
-export const getSkillsByCategory = (category: SkillCategory): Skill[] => {
-  return skills.filter((skill) => skill.category === category);
-};

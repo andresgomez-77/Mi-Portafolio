@@ -6,10 +6,13 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { motion, type Variants } from "framer-motion";
 import { alpha } from "@mui/material/styles";
 import { tokens } from "../../theme/theme";
-import { experiences } from "../../data/portfolioData";
-import type { Experience } from "../../data/portfolioData";
+
 import SectionHeader from "../ui/SectionHeader";
 import useInView from "../../hooks/useInView";
+import { experiencesApi } from "../../services/api";
+import { experiencesFallback } from "../../data/portfolioData";
+import { useEffect, useState } from "react";
+import type { Experience } from "../../types";
 
 const COMPANY_TECH: Record<string, string[]> = {
   "ActionTracker Solutions SL": [
@@ -56,7 +59,16 @@ const slideVariants: Variants = {
 // ── COMPONENTE PRINCIPAL ──────────────────────────────────────────────────────
 const ExperienceSection = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.05 });
+  const [experiences, setExperiences] = useState<Experience[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    experiencesApi
+      .getAll()
+      .then((data) => setExperiences(data))
+      .catch(() => setExperiences(experiencesFallback))
+      .finally(() => setLoading(false));
+  }, []);
   return (
     <Box
       component="section"
@@ -107,10 +119,10 @@ const ExperienceSection = () => {
               },
             }}
           >
-            {experiences.map((experience, idx) => (
+            {experiences.map((exp, idx) => (
               <ExperienceItem
-                key={experience.id}
-                experience={experience}
+                key={exp._id}
+                experience={exp}
                 index={idx}
                 inView={inView}
                 isLeft={idx % 2 === 0}
