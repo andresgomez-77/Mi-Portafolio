@@ -7,7 +7,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { alpha } from "@mui/material/styles";
 import { tokens } from "../../theme/theme";
-import type { Project } from "../../data/portfolioData";
+import type { Project } from "../../types";
 
 interface ProjectCardProps {
   project: Project;

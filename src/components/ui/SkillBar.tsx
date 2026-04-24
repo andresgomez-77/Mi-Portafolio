@@ -6,7 +6,7 @@ import { alpha } from "@mui/material/styles";
 import { tokens } from "../../theme/theme";
 import { getSkillIcon } from "../../data/skillIcons";
 import useCountUp from "../../hooks/useCountUp";
-import type { Skill } from "../../data/portfolioData";
+import type { Skill } from "../../types";
 
 interface SkillBarProps {
   skill: Skill;
