@@ -21,11 +21,11 @@ import { educationFallback } from "../../data/portfolioData";
 // Mapeamos el nombre de institución a su logo
 // Si no hay logo, mostramos el ícono de MUI
 const INSTITUTION_LOGOS: Record<string, string> = {
-  SENA: "/assets/img/sena_logo.png",
-  UTS: "/assets/img/uts_logo.png",
-  "UTS — Universidad de Tecnología y Sociedad": "/assets/img/uts_logo.png",
-  Crehana: "/assets/img/crehana_logo.png",
-  "Oracle + Alura Latam": "/assets/img/alura_logo.png",
+  SENA: "/assets/img/sena_logo.webp",
+  UTS: "/assets/img/uts_logo.webp",
+  "UTS — Universidad de Tecnología y Sociedad": "/assets/img/uts_logo.webp",
+  Crehana: "/assets/img/crehana_logo.webp",
+  "Oracle + Alura Latam": "/assets/img/alura_logo.webp",
 };
 
 // ── VARIANTES ─────────────────────────────────────────────────────────────────

@@ -60,8 +60,8 @@ const lineVariants: Variants = {
 
 // ── MINI STATS ────────────────────────────────────────────────────────────────
 const MINI_STATS = [
-  { value: "6+", label: "Proyectos" },
-  { value: "2+", label: "Años dev" },
+  { value: "10+", label: "Proyectos" },
+  { value: "3+", label: "Años dev" },
   { value: "∞", label: "Curiosidad" },
 ];
 

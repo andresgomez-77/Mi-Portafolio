@@ -146,6 +146,7 @@ const AboutSection = () => {
                           fontFamily: tokens.font.mono,
                           fontSize: "0.78rem",
                           color: tokens.color.text.muted,
+                          textAlign: "justify",
                         }}
                       >
                         {personalInfo.location}
@@ -170,6 +171,7 @@ const AboutSection = () => {
                           fontFamily: tokens.font.mono,
                           fontSize: "0.78rem",
                           color: tokens.color.text.muted,
+                          textAlign: "justify",
                         }}
                       >
                         ActionTracker Solutions SL
@@ -180,16 +182,22 @@ const AboutSection = () => {
                   {/* Descripción */}
                   <Typography
                     variant="body1"
-                    sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}
+                    sx={{
+                      fontSize: {
+                        xs: "0.9rem",
+                        md: "1rem",
+                        textAlign: "justify",
+                      },
+                    }}
                   >
-                    {personalInfo.description}
+                    {personalInfo.descriptionLong}
                   </Typography>
 
                   {/* ── STATS ─────────────────────────────────────────────── */}
                   <Grid container spacing={2}>
                     {[
-                      { value: 6, suffix: "+", label: "Proyectos", delay: 0 },
-                      { value: 2, suffix: "+", label: "Años dev", delay: 100 },
+                      { value: 10, suffix: "+", label: "Proyectos", delay: 0 },
+                      { value: 3, suffix: "+", label: "Años dev", delay: 100 },
                       {
                         value: null,
                         symbol: "∞",
@@ -220,6 +228,7 @@ const AboutSection = () => {
                         letterSpacing: "0.15em",
                         textTransform: "uppercase",
                         mb: 1.5,
+                        textAlign: "justify",
                       }}
                     >
                       Stack principal

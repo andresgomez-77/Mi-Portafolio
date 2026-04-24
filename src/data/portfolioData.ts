@@ -14,25 +14,27 @@ export const personalInfo = {
   roles: [
     "Desarrollador Frontend 💻",
     "Ingeniero Electrónico ⚡",
-    "Full Stack en progreso 🚀",
     "Admin de Bases de Datos 🗄️",
+    "Coordinador Técnico 🎯",
   ],
   holder:
-    "Ingeniero Electrónico | Desarrollador Frontend / Full Stack (React, TypeScript) | Administrador de Bases de Datos | Coordinador Técnico de Proyectos",
+    "Desarrollador Frontend | Administrador de Bases de Datos | Coordinador Técnico de Proyectos",
   // Descripción que aparece en "Sobre mí" — actualizada con tu experiencia real
   description:
-    "Ingeniero Electrónico con experiencia en desarrollo Frontend y Full Stack, administración operativa de bases de datos SQL y NoSQL, e integración de sistemas mediante APIs REST. He participado en el desarrollo y validación de interfaces con React, JavaScript y TypeScript, así como en la gestión de PostgreSQL y PostGIS en entornos Linux. Cuento con experiencia coordinando equipos técnicos multidisciplinarios bajo metodologías ágiles como Scrum.",
+    "Me encanta construir productos digitales que realmente funcionen las interfaces intuitivas, rápidas y que resuelvan problemas reales. Disfruto ese momento donde diseño, lógica y UX se alinean perfectamente. Creo que un buen desarrollador nunca deja de ser estudiante.",
+  descriptionLong:
+    "Me apasiona construir interfaces intuitivas que resuelvan problemas reales en ese momento donde diseño, lógica y UX se alinean perfectamente. Quiero hacer parte de un equipo con buenas prácticas reales: código documentado, pruebas y cultura de mejora continua. Lo que ofrezco: compromiso real con lo que entrego, visión de producto pensando en el usuario final, mentalidad de calidad aprendida en coordinación y QA, y aprendizaje continuo. Si no sé algo, lo aprendo. Esa es mi ventaja competitiva.",
   location: "Colombia 🇨🇴",
   email: "andresgomez-77@hotmail.com",
   available: true,
-  photo: "/assets/img/cara.png",
+  photo: "/assets/img/cara.webp",
   cv: "/assets/doc/C.V. - Andrés Felipe Gómez P.pdf",
   github: "https://github.com/andresgomez-77",
   linkedin: "https://www.linkedin.com/in/andresfgomezp/",
   // Stats del "Sobre mí"
   stats: [
-    { number: "6+", label: "Proyectos" },
-    { number: "2+", label: "Años dev" },
+    { number: "10+", label: "Proyectos" },
+    { number: "3+", label: "Años dev" },
     { number: "∞", label: "Curiosidad" },
   ],
 };
@@ -43,16 +45,16 @@ export const experiencesFallback: Experience[] = [
     _id: "1",
     role: "Coordinador de Desarrollo de Proyectos",
     company: "ActionTracker Solutions SL",
-    date: "Junio 2023 - Actual",
+    date: "Junio 2023 - Abril 2026",
     current: true,
     responsibilities: [
-      "Coordinación técnica de equipos Frontend, Backend, GIS, QA y análisis de datos bajo metodologías ágiles (Scrum).",
-      "Participación en el desarrollo y validación de interfaces frontend con React, JavaScript y TypeScript, integradas con servicios backend mediante APIs REST.",
-      "Gestión de repositorios en GitHub utilizando Gitflow (branches, issues, merges y releases).",
-      "Administración de bases de datos SQL y NoSQL (PostgreSQL, PostGIS, MySQL, MongoDB), incluyendo esquemas, tablas, índices, particiones y control de integridad.",
-      "Ejecución de respaldos (backups), restauración, monitoreo de disponibilidad y optimización de consultas SQL.",
-      "Coordinación de despliegues con Docker, Kubernetes y Rancher, asegurando estabilidad de los entornos productivos.",
-      "Soporte y mantenimiento de bases de datos en aplicaciones productivas, colaborando con equipos de desarrollo y operaciones.",
+      "Coordiné equipos multidisciplinarios de ~15 personas (Frontend, Backend, GIS, QA y Datos) bajo Scrum, asegurando entregas continuas y flujo de trabajo ordenado.",
+      "Gestioné el ciclo completo de releases en GitHub con GitFlow — eliminando errores manuales al pasar de despliegue manual en Linux a flujo automatizado.",
+      "Coordiné despliegues con Docker, Jenkins, Kubernetes y Rancher en entornos de desarrollo, QA y producción.",
+      "Lideré planes de pruebas QA en aplicaciones web y móviles, gestionando el ciclo completo de detección, reporte y corrección de errores.",
+      "Participé en desarrollo y validación de interfaces con React, Angular, JavaScript y TypeScript integradas con APIs REST.",
+      "Implementé particiones en ETL (Pentaho) que resolvieron colapsos en consultas de alto volumen.",
+      "Apliqué índices en PostgreSQL y MongoDB mejorando visiblemente tiempos de respuesta en consultas críticas.",
     ],
     order: 1,
   },
@@ -234,7 +236,7 @@ export const projectsFallback: Project[] = [
     title: "Encriptador de Texto",
     description:
       "Aplicación web que encripta y desencripta mensajes usando lógica de sustitución de caracteres. Primer challenge de Alura.",
-    image: "/assets/img/Encriptador.png",
+    image: "/assets/img/Encriptador.webp",
     tags: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/andresgomez-77/challenge-encriptador-oracle",
     demoUrl: "https://andresgomez-77.github.io/challenge-encriptador-oracle/",
@@ -247,7 +249,7 @@ export const projectsFallback: Project[] = [
     title: "Juego del Ahorcado",
     description:
       "Juego interactivo con temática siniestra, música de suspenso y controles de audio. Diseñado para ser inmersivo.",
-    image: "/assets/img/ahorcado.jpg",
+    image: "/assets/img/ahorcado.webp",
     tags: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/andresgomez-77/Juego-del-Ahorcado",
     demoUrl: "https://andresgomez-77.github.io/Juego-del-Ahorcado/",
@@ -260,7 +262,7 @@ export const projectsFallback: Project[] = [
     title: "Tienda Virtual",
     description:
       "E-commerce de materiales de construcción. En proceso de actualización a stack moderno con autenticación y panel admin.",
-    image: "/assets/img/e-commerce.png",
+    image: "/assets/img/e-commerce.webp",
     tags: ["Tailwind CSS", "TypeScript", "React", "Supabase", "Next.js"],
     githubUrl: "https://github.com/andresgomez-77/E-commerce",
     demoUrl: "https://andresgomez-77.github.io/E-commerce/",
@@ -274,7 +276,7 @@ export const projectsFallback: Project[] = [
     title: "Conversor de Moneda",
     description:
       "Convierte pesos colombianos a distintas divisas y unidades de masa. Desarrollado en Java con Eclipse IDE.",
-    image: "/assets/img/Conversor.png",
+    image: "/assets/img/Conversor.webp",
     tags: ["Java", "Eclipse IDE"],
     githubUrl: "https://github.com/andresgomez-77/Conversor-de-Moneda",
     badge: "Challenge Alura",
@@ -286,7 +288,7 @@ export const projectsFallback: Project[] = [
     title: "Hotel Alura",
     description:
       "Sistema de reservas hoteleras en Java. Controla el flujo de reservas y huéspedes con interfaz gráfica Swing.",
-    image: "/assets/img/hotelAlura.png",
+    image: "/assets/img/hotelAlura.webp",
     tags: ["Java", "MySQL", "Swing"],
     githubUrl: "https://github.com/andresgomez-77/hotel-alura",
     badge: "Challenge Alura",
@@ -298,7 +300,7 @@ export const projectsFallback: Project[] = [
     title: "StarJeak Streaming",
     description:
       "Plataforma de entretenimiento con secciones de streaming, música y juegos. Mi primer proyecto web completo.",
-    image: "/assets/img/Sin titulo.png",
+    image: "/assets/img/Sin titulo.webp",
     tags: ["HTML", "CSS"],
     githubUrl: "https://github.com/andresgomez-77/Starjeak",
     demoUrl: "https://andresgomez-77.github.io/Starjeak/",
