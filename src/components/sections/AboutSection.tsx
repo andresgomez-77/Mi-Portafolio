@@ -425,7 +425,7 @@ const PhotoBlock = () => (
         alignItems: "center",
         minWidth: "80px",
       }}
-      aria-label="2 o más años en desarrollo"
+      aria-label="3 o más años en desarrollo"
     >
       <Typography
         sx={{
@@ -436,7 +436,7 @@ const PhotoBlock = () => (
           fontWeight: 400,
         }}
       >
-        2+
+        3+
       </Typography>
       <Typography
         sx={{
