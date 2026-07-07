@@ -28,7 +28,7 @@ export const personalInfo = {
   email: "andresgomez-77@hotmail.com",
   available: true,
   photo: "/assets/img/cara.webp",
-  cv: "/assets/doc/C.V. - Andrés Felipe Gómez P.pdf",
+  cv: "/assets/doc/Andres_Gomez_Frontend_React_Developer_CV.pdf",
   github: "https://github.com/andresgomez-77",
   linkedin: "https://www.linkedin.com/in/andresfgomezp/",
   // Stats del "Sobre mí"
