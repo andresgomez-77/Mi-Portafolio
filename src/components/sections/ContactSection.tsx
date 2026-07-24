@@ -33,6 +33,7 @@ import { personalInfo, socialLinks } from "../../data/portfolioData";
 import SectionHeader from "../ui/SectionHeader";
 import useInView from "../../hooks/useInView";
 import useForm from "../../hooks/useForm";
+import { contactApi } from "../../services/api";
 
 // ── Constantes del formulario ─────────────────────────────────────────────────
 const MAX_MESSAGE_LENGTH = 500;
@@ -101,16 +102,15 @@ const slideVariants = (direction: "left" | "right"): Variants => ({
 const ContactSection = () => {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.05 });
 
-  // Función de envío — en producción aquí conectarías Formspree, EmailJS, etc.
-  // useCallback evita que se recree en cada render
+  // Envía el formulario al backend (Express + Resend). Si `send` rechaza,
+  // useForm captura el error y pone status="error" — no hay try/catch acá.
   const handleSubmit = useCallback(async (values: Record<string, string>) => {
-    // Simulamos un delay de red para ver el estado loading
-    await new Promise((resolve) => setTimeout(resolve, 1800));
-
-    // En producción reemplaza esto con tu servicio de email:
-    // await emailjs.send(serviceId, templateId, values)
-    // await fetch("https://formspree.io/f/xxx", { method: "POST", body: ... })
-    console.log("Formulario enviado:", values);
+    await contactApi.send({
+      nombre: values.nombre,
+      email: values.email,
+      asunto: values.asunto,
+      mensaje: values.mensaje,
+    });
   }, []);
 
   const form = useForm({
