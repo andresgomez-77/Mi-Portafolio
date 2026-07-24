@@ -4,8 +4,6 @@ import {
   Button,
   Typography,
   TextField,
-  Chip,
-  IconButton,
   Checkbox,
   FormControlLabel,
   Divider,
@@ -15,16 +13,32 @@ import {
   DialogActions,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { alpha } from "@mui/material/styles";
 import { tokens } from "../../../theme/theme";
 import { adminStyles } from "../../../styles/adminStyles";
 import { useAuth } from "../../../context/AuthContext";
+import { projectsApi, projectsAdminApi } from "../../../services/api";
+import { ImageUploadField } from "../ImageUploadField";
+import { SortableProjectRow } from "../SortableProjectRow";
 import type { Project } from "../../../types";
+import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  KeyboardSensor,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  arrayMove,
+  verticalListSortingStrategy,
+  sortableKeyboardCoordinates,
+} from "@dnd-kit/sortable";
+import { restrictToVerticalAxis, restrictToParentElement } from "@dnd-kit/modifiers";
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
-
+// `order` ya NO vive en el formulario: lo calcula el backend al crear
+// (siempre al final) y solo cambia vía drag & drop o "fijar arriba".
 const emptyForm = {
   title: "",
   description: "",
@@ -35,7 +49,6 @@ const emptyForm = {
   badge: "",
   badgeType: "default" as "default" | "featured" | "personal",
   featured: false,
-  order: 0,
 };
 
 export const ProjectsTab = () => {
@@ -48,14 +61,18 @@ export const ProjectsTab = () => {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+  );
+
   useEffect(() => {
     fetchProjects();
   }, []);
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/projects`);
-      const data = (await res.json()) as Project[];
+      const data = await projectsApi.getAll();
       setProjects(data);
     } catch {
       setError("Error cargando proyectos");
@@ -83,7 +100,6 @@ export const ProjectsTab = () => {
       badge: project.badge,
       badgeType: project.badgeType ?? "default",
       featured: project.featured ?? false,
-      order: project.order,
     });
     setError(null);
     setOpenModal(true);
@@ -97,10 +113,14 @@ export const ProjectsTab = () => {
   };
 
   const handleSave = async () => {
+    if (!token) {
+      setError("Sesión expirada, vuelve a iniciar sesión");
+      return;
+    }
     setSaving(true);
     setError(null);
 
-    const body = {
+    const payload = {
       ...form,
       tags: form.tags
         .split(",")
@@ -108,45 +128,68 @@ export const ProjectsTab = () => {
         .filter(Boolean),
     };
 
-    const url = editingId
-      ? `${API_URL}/api/projects/${editingId}`
-      : `${API_URL}/api/projects`;
-
     try {
-      const res = await fetch(url, {
-        method: editingId ? "PUT" : "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(body),
-      });
-
-      if (!res.ok) {
-        setError("Error guardando el proyecto");
-        return;
+      if (editingId) {
+        await projectsAdminApi.update(token, editingId, payload);
+      } else {
+        await projectsAdminApi.create(token, payload);
       }
-
       await fetchProjects();
       handleClose();
     } catch {
-      setError("Error de conexión");
+      setError("Error guardando el proyecto");
     } finally {
       setSaving(false);
     }
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("¿Eliminar este proyecto?")) return;
+    if (!token || !confirm("¿Eliminar este proyecto?")) return;
     try {
-      await fetch(`${API_URL}/api/projects/${id}`, {
-        method: "DELETE",
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await projectsAdminApi.remove(token, id);
       await fetchProjects();
     } catch {
       setError("Error eliminando proyecto");
     }
+  };
+
+  /**
+   * Persiste un nuevo orden en el backend en una sola llamada (bulk write).
+   * Aplica el reorden de forma optimista en la UI y, si el request falla,
+   * revierte al estado anterior en vez de dejar la lista desincronizada.
+   */
+  const persistReorder = async (reordered: Project[]) => {
+    if (!token) return;
+    const previous = projects;
+    setProjects(reordered);
+    try {
+      const confirmed = await projectsAdminApi.reorder(
+        token,
+        reordered.map((p) => p._id),
+      );
+      setProjects(confirmed);
+    } catch {
+      setProjects(previous);
+      setError("No se pudo guardar el nuevo orden, intenta de nuevo");
+    }
+  };
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+
+    const oldIndex = projects.findIndex((p) => p._id === active.id);
+    const newIndex = projects.findIndex((p) => p._id === over.id);
+    if (oldIndex === -1 || newIndex === -1) return;
+
+    void persistReorder(arrayMove(projects, oldIndex, newIndex));
+  };
+
+  const handlePinToTop = (id: string) => {
+    const target = projects.find((p) => p._id === id);
+    if (!target) return;
+    const rest = projects.filter((p) => p._id !== id);
+    void persistReorder([target, ...rest]);
   };
 
   return (
@@ -166,7 +209,7 @@ export const ProjectsTab = () => {
             fontSize: "0.8rem",
           }}
         >
-          {projects.length} proyectos en total
+          {projects.length} proyectos en total — arrastra para reordenar
         </Typography>
         <Button
           variant="contained"
@@ -180,6 +223,14 @@ export const ProjectsTab = () => {
 
       <Divider sx={{ borderColor: tokens.color.border.subtle }} />
 
+      {error && (
+        <Typography
+          sx={{ color: "#ef4444", fontFamily: tokens.font.mono, fontSize: "0.8rem" }}
+        >
+          {error}
+        </Typography>
+      )}
+
       {/* ── LISTA ──────────────────────────────────────────────────── */}
       {loading ? (
         <Typography
@@ -192,76 +243,31 @@ export const ProjectsTab = () => {
           // cargando...
         </Typography>
       ) : (
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "1fr",
-              md: "repeat(2, 1fr)",
-              lg: "repeat(3, 1fr)",
-            },
-            gap: 2,
-          }}
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCenter}
+          modifiers={[restrictToVerticalAxis, restrictToParentElement]}
+          onDragEnd={handleDragEnd}
         >
-          {projects.map((project) => (
-            <Box key={project._id} sx={adminStyles.card}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                }}
-              >
-                <Box sx={{ flex: 1 }}>
-                  <Typography
-                    sx={{
-                      color: tokens.color.text.primary,
-                      fontWeight: 600,
-                      mb: 0.5,
-                    }}
-                  >
-                    {project.title}
-                  </Typography>
-                  <Box sx={{ display: "flex", gap: 0.8, flexWrap: "wrap" }}>
-                    {project.tags.map((tag) => (
-                      <Chip
-                        key={tag}
-                        label={tag}
-                        size="small"
-                        sx={{
-                          fontFamily: tokens.font.mono,
-                          fontSize: "0.65rem",
-                          backgroundColor: alpha(tokens.color.amber[500], 0.1),
-                          color: tokens.color.amber[500],
-                        }}
-                      />
-                    ))}
-                  </Box>
-                </Box>
-                <Box sx={{ display: "flex", gap: 1 }}>
-                  <IconButton
-                    onClick={() => handleEdit(project)}
-                    sx={{
-                      color: tokens.color.text.muted,
-                      "&:hover": { color: tokens.color.amber[500] },
-                    }}
-                  >
-                    <EditIcon fontSize="small" />
-                  </IconButton>
-                  <IconButton
-                    onClick={() => handleDelete(project._id)}
-                    sx={{
-                      color: tokens.color.text.muted,
-                      "&:hover": { color: "#ef4444" },
-                    }}
-                  >
-                    <DeleteIcon fontSize="small" />
-                  </IconButton>
-                </Box>
-              </Box>
+          <SortableContext
+            items={projects.map((p) => p._id)}
+            strategy={verticalListSortingStrategy}
+          >
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {projects.map((project, index) => (
+                <SortableProjectRow
+                  key={project._id}
+                  project={project}
+                  position={index + 1}
+                  isFirst={index === 0}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                  onPinToTop={handlePinToTop}
+                />
+              ))}
             </Box>
-          ))}
-        </Box>
+          </SortableContext>
+        </DndContext>
       )}
 
       {/* ── MODAL ──────────────────────────────────────────────────── */}
@@ -332,19 +338,19 @@ export const ProjectsTab = () => {
               onChange={(e) =>
                 setForm({ ...form, description: e.target.value })
               }
-              sx={adminStyles.input}
+              sx={{ ...adminStyles.input, gridColumn: "1 / -1" }}
               fullWidth
               multiline
               rows={3}
             />
 
-            <TextField
-              label="Imagen (URL — opcional)"
-              value={form.image}
-              onChange={(e) => setForm({ ...form, image: e.target.value })}
-              sx={adminStyles.input}
-              fullWidth
-            />
+            <Box sx={{ gridColumn: "1 / -1" }}>
+              <ImageUploadField
+                value={form.image}
+                onChange={(url) => setForm({ ...form, image: url })}
+                token={token}
+              />
+            </Box>
 
             <TextField
               label="GitHub URL"
@@ -366,20 +372,9 @@ export const ProjectsTab = () => {
               label="Tags (separados por coma)"
               value={form.tags}
               onChange={(e) => setForm({ ...form, tags: e.target.value })}
-              sx={adminStyles.input}
+              sx={{ ...adminStyles.input, gridColumn: "1 / -1" }}
               fullWidth
               helperText="Ej: React, TypeScript, Node.js"
-            />
-
-            <TextField
-              label="Order"
-              type="number"
-              value={form.order}
-              onChange={(e) =>
-                setForm({ ...form, order: Number(e.target.value) })
-              }
-              sx={adminStyles.input}
-              fullWidth
             />
 
             <FormControlLabel
